@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<mainmenu level="user">
+		<node name="srvset">
+			<node name="left4dead2.resume"/>
+			<node name="left4dead2.suspend"/>
+			<node name="left4dead2.reinstall"/>
+		</node>
+		<node name="set">
+			<node name="left4dead2"/>
+			<node name="left4dead2.plugin"/>
+			<node name="left4dead2.mapcycle"/>
+		</node>
+	</mainmenu>
+	<metadata name="left4dead2.state" type="list" key="name">
+		<coldata>
+			<col name="name" type="msg"/>
+			<col name="value" type="data">
+				<xprop name="status" img="p-on" value="on"/>
+				<xprop name="status" img="p-off" value="off"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="left4dead2" type="form">
+		<form title="name">
+			<page name="server">
+				<field name="hostname">
+					<input type="text" name="hostname"/>
+				</field>
+				<field name="sv_contact">
+					<input type="text" name="sv_contact"/>
+				</field>
+				<field name="rcon_password">
+					<input type="text" name="rcon_password"/>
+				</field>
+				<field name="sv_password">
+					<input type="text" name="sv_password"/>
+				</field>
+				<field name="gamemode">
+					<select name="gamemode"/>
+				</field>
+				<field name="map">
+					<select name="map" sorted="asc" sort="digit"/>
+				</field>
+				<field name="z_difficulty">
+					<select name="z_difficulty"/>
+				</field>
+				<field name="sv_alltalk">
+					<input type="checkbox" name="sv_alltalk"/>
+				</field>
+				<field name="sv_region">
+					<select name="sv_region"/>
+				</field>
+			</page>
+			<page name="apply">
+				<field name="restart" fullwidth="yes">
+					<input name="restart" type="checkbox" required="yes"/>
+					<desc name="restartdesc"/>
+				</field>
+			</page>
+		</form>
+	</metadata>
+	<metadata name="left4dead2.plugin" type="list" key="name">
+		<toolbar>
+			<toolbtn func="left4dead2.plugin.install" name="install" img="t-on" type="group"/>
+			<toolbtn func="left4dead2.plugin.delete" name="delete" img="t-off" type="group"/>
+			<toolbtn func="left4dead2.plugin.edit" name="edit" img="t-attr" type="edit"/>
+		</toolbar>
+		<coldata>
+			<col name="name" type="data"/>
+			<col name="status" sort="prop">
+				<xprop name="installed" img="p-on" value="on" stat="yes"/>
+				<xprop name="installed" img="p-off" value="off" stat="yes"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="left4dead2.plugin.showdamage" type="form">
+		<form title="name">
+			<field name="config" fullwidth="yes">
+				<textarea name="config" warp="off" rows="30"/>
+			</field>
+		</form>
+	</metadata>
+	<metadata name="left4dead2.mapcycle" type="list" key="order">
+		<toolbar>
+			<toolbtn func="left4dead2.mapcycle.edit" name="new" img="t-new" type="new"/>
+			<toolbtn func="left4dead2.mapcycle.edit" name="edit" img="t-edit" type="edit"/>
+			<toolbtn func="left4dead2.mapcycle.delete" name="delete" img="t-delete" type="group"/>
+			<toolsep/>
+			<toolbtn func="left4dead2.mapcycle.up" name="up" type="editlist" img="t-up" sametab="yes">
+				<hide name="is_boundary" value="first"/>
+			</toolbtn>
+			<toolbtn func="left4dead2.mapcycle.down" name="down" type="editlist" img="t-down" sametab="yes">
+				<hide name="is_boundary" value="last"/>
+			</toolbtn>
+		</toolbar>
+		<coldata>
+			<col name="order" type="data" hidden="yes"/>
+			<col name="map" type="data"/>
+		</coldata>
+	</metadata>
+	<metadata name="left4dead2.mapcycle.edit" type="form">
+		<form>
+			<field name="map">
+				<select name="map"/>
+			</field>
+		</form>
+	</metadata>
+	
+	<metadata name="left4dead2.resume" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="left4dead2.suspend" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="left4dead2.reinstall" type="form">
+		<include name="game.reinstall"/>
+	</metadata>
+	
+	<lang name="ru">
+		<messages name="left4dead2.suspend">
+			<include name="stopserver_confirmform"/>
+		</messages>
+		<messages name="left4dead2.resume">
+			<include name="startserver_confirmform"/>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_left4dead2">Конфигурация</msg>
+			<msg name="menu_left4dead2.resume">Перезапустить</msg>
+			<msg name="menu_left4dead2.suspend">Остановить</msg>
+			<msg name="menu_left4dead2.plugin">Плагины</msg>
+			<msg name="menu_left4dead2.mapcycle">Цикл карт</msg>
+			<msg name="menu_left4dead2.reinstall">Переустановить</msg>
+		</messages>
+		<messages name="dashboard">
+			<msg name="left4dead2toolbar_configure">Изменить конфигурацию</msg>
+			<msg name="left4dead2toolbar_resume">Запустить/ Перезапустить</msg>
+			<msg name="left4dead2toolbar_suspend">Остановить</msg>
+			<msg name="left4dead2toolbar_reinstall">Переустановить</msg>
+			<msg name="title_left4dead2toolbar">Управление сервером Left4Dead 2</msg>
+		</messages>
+		<messages name="left4dead2.state">
+			<msg name="title">Состояние сервера</msg>
+			<msg name="name">Параметр</msg>
+			<msg name="value">Значение</msg>
+			<msg name="name_players_online">Игроков на сервере</msg>
+			<msg name="name_port">Порт сервера</msg>
+			<msg name="name_ip">IP-адрес сервера</msg>
+			<msg name="name_server_online">Сервер запущен</msg>
+			<msg name="name_server_offline">Сервер остановлен</msg>
+			<msg name="hint_p_status_on">Сервер запущен</msg>
+			<msg name="hint_p_status_off">Сервер остановлен</msg>
+		</messages>
+		<messages name="left4dead2">
+			<msg name="title">Сервер Left4Dead 2</msg>
+
+			<msg name="server">Сервер</msg>
+			<msg name="hostname">Имя сервера</msg>
+			<msg name="sv_contact">Адрес администратора</msg>
+			<msg name="rcon_password">Пароль удалённой консоли</msg>
+			<msg name="sv_password">Пароль для игры</msg>
+			<msg name="map">Карта (по умолч.)</msg>
+			<msg name="sv_region">Регион</msg>
+			<msg name="reg_us_east_coast">Восточное побережье США</msg>
+			<msg name="reg_us_west_coast">Западное побережье США</msg>
+			<msg name="reg_south_america">Южная Америка</msg>
+			<msg name="reg_europe">Европа</msg>
+			<msg name="reg_asia">Азия</msg>
+			<msg name="reg_australia">Австралия</msg>
+			<msg name="reg_middle_east">Средний Восток</msg>
+			<msg name="reg_africa">Африка</msg>
+			<msg name="reg_world">Весь мир</msg>
+
+			<msg name="gamemode">Режим игры</msg>
+			<msg name="coop">Кампания</msg>
+			<msg name="realism">Реализм</msg>
+			<msg name="survival">Выживание</msg>
+			<msg name="versus">Сражение</msg>
+			<msg name="teamversus">Командное сражение</msg>
+			<msg name="scavenge">Сбор</msg>
+			<msg name="teamscavenge">Командный сбор</msg>
+			
+			<msg name="z_difficulty">Сложность игры</msg>
+			<msg name="easy">Легко</msg>
+			<msg name="normal">Нормально</msg>
+			<msg name="hard">Тяжело</msg>
+			<msg name="impossible">Невозможно!</msg>
+			
+			<msg name="sv_alltalk">Общий голосовой чат</msg>
+
+			<msg name="apply">Применение настроек</msg>
+			<msg name="restartdesc">Применить параметры сервера сразу после нажатия кнопки OK. Запускает или перезапускает сервер.</msg>
+		</messages>
+		<messages name="left4dead2.plugin">
+			<msg name="title">Управление плагинами Left4Dead 2</msg>
+			<msg name="name">Имя</msg>
+			<msg name="status">Состояние</msg>
+			<msg name="hint_p_installed_on">Установлен</msg>
+			<msg name="hint_p_installed_off">Не установлен</msg>
+			<msg name="short_edit">Настроить</msg>
+			<msg name="short_install">Установить</msg>
+		</messages>
+		<messages name="left4dead2.plugin.showdamage">
+			<msg name="title_new">Настройки ShowDamage</msg>
+			<msg name="title">Настройки ShowDamage</msg>
+			<msg name="config">Конфигурационный файл</msg>
+		</messages>
+		<messages name="left4dead2.mapcycle">
+			<msg name="title">Порядок карт</msg>
+			<msg name="map">Карта</msg>
+			<msg name="short_up">Играть раньше</msg>
+			<msg name="short_down">Играть позже</msg>
+		</messages>
+		<messages name="left4dead2.mapcycle.edit">
+			<msg name="title">Изменение карты</msg>
+			<msg name="map">Карта</msg>
+		</messages>
+		<messages name="left4dead2.reinstall">
+			<include name="game.reinstall"/>
+		</messages>
+	</lang>
+</mgrdata>

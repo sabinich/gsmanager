@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mgrdata>
+  <metadata name="reportcommon" type="report" level="admin+">
+    <band name="single_report" fullwidth="yes">
+      <col type="data" name="report_name"/>
+      <band name="data" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram_trafic">
+          <line data="rx"/>
+          <line data="tx"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_cpu">
+          <line data="cpu"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_iops">
+          <line data="iops"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_mem">
+          <line data="mem"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_loadavg">
+          <line data="loadavg"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_rejects">
+          <line data="memrej"/>
+          <line data="numprocrej"/>
+          <line data="numfilerej"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_proc">
+          <line data="numproc"/>
+        </diagram>
+        <diagram type="line" label="time" name="diagram_file">
+          <line data="numfile"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="rx" sort="digit" total="sum"/>
+        <col type="data" name="tx" sort="digit" total="sum"/>
+        <col type="data" name="cpu" sort="digit" total="avg"/>
+        <col type="data" name="iops" sort="digit" total="avg"/>
+        <col type="data" name="mem" sort="digit" total="avg"/>
+        <col type="data" name="loadavg" sort="digit" total="avg"/>
+        <col type="data" name="memrej" sort="digit" total="avg"/>
+        <col type="data" name="numprocrej" sort="digit" total="avg"/>
+        <col type="data" name="numfilerej" sort="digit" total="avg"/>
+        <col type="data" name="numproc" sort="digit" total="max"/>
+        <col type="data" name="numfile" sort="digit" total="max"/>
+      </band>
+    </band>
+  </metadata>
+  <metadata name="reporttop" type="report" level="admin+">
+    <band name="report_top_rx" fullwidth="yes">
+      <col type="data" name="rx"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_rx_0"/>
+          <line data="col_rx_1"/>
+          <line data="col_rx_2"/>
+          <line data="col_rx_3"/>
+          <line data="col_rx_4"/>
+          <line data="col_rx_5"/>
+          <line data="col_rx_6"/>
+          <line data="col_rx_7"/>
+          <line data="col_rx_8"/>
+          <line data="col_rx_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_rx_0" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_1" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_2" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_3" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_4" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_5" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_6" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_7" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_8" sort="digit" total="sum"/>
+        <col type="data" name="col_rx_9" sort="digit" total="sum"/>
+      </band>
+    </band>
+    <band name="report_top_tx" fullwidth="yes">
+      <col type="data" name="tx"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_tx_0"/>
+          <line data="col_tx_1"/>
+          <line data="col_tx_2"/>
+          <line data="col_tx_3"/>
+          <line data="col_tx_4"/>
+          <line data="col_tx_5"/>
+          <line data="col_tx_6"/>
+          <line data="col_tx_7"/>
+          <line data="col_tx_8"/>
+          <line data="col_tx_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha" />
+        <col type="data" name="col_tx_0" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_1" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_2" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_3" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_4" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_5" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_6" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_7" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_8" sort="digit" total="sum"/>
+        <col type="data" name="col_tx_9" sort="digit" total="sum"/>
+      </band>
+    </band>
+    <band name="report_top_cpu" fullwidth="yes">
+      <col type="data" name="cpu"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_cpu_0"/>
+          <line data="col_cpu_1"/>
+          <line data="col_cpu_2"/>
+          <line data="col_cpu_3"/>
+          <line data="col_cpu_4"/>
+          <line data="col_cpu_5"/>
+          <line data="col_cpu_6"/>
+          <line data="col_cpu_7"/>
+          <line data="col_cpu_8"/>
+          <line data="col_cpu_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_cpu_0" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_1" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_2" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_3" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_4" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_5" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_6" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_7" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_8" sort="digit" total="avg"/>
+        <col type="data" name="col_cpu_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_iops" fullwidth="yes">
+      <col type="data" name="iops"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_iops_0"/>
+          <line data="col_iops_1"/>
+          <line data="col_iops_2"/>
+          <line data="col_iops_3"/>
+          <line data="col_iops_4"/>
+          <line data="col_iops_5"/>
+          <line data="col_iops_6"/>
+          <line data="col_iops_7"/>
+          <line data="col_iops_8"/>
+          <line data="col_iops_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_iops_0" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_1" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_2" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_3" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_4" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_5" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_6" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_7" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_8" sort="digit" total="avg"/>
+        <col type="data" name="col_iops_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_mem" fullwidth="yes">
+      <col type="data" name="mem"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_mem_0"/>
+          <line data="col_mem_1"/>
+          <line data="col_mem_2"/>
+          <line data="col_mem_3"/>
+          <line data="col_mem_4"/>
+          <line data="col_mem_5"/>
+          <line data="col_mem_6"/>
+          <line data="col_mem_7"/>
+          <line data="col_mem_8"/>
+          <line data="col_mem_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_mem_0" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_1" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_2" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_3" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_4" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_5" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_6" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_7" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_8" sort="digit" total="avg"/>
+        <col type="data" name="col_mem_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_loadavg" fullwidth="yes">
+      <col type="data" name="loadavg"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_loadavg_0"/>
+          <line data="col_loadavg_1"/>
+          <line data="col_loadavg_2"/>
+          <line data="col_loadavg_3"/>
+          <line data="col_loadavg_4"/>
+          <line data="col_loadavg_5"/>
+          <line data="col_loadavg_6"/>
+          <line data="col_loadavg_7"/>
+          <line data="col_loadavg_8"/>
+          <line data="col_loadavg_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_loadavg_0" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_1" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_2" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_3" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_4" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_5" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_6" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_7" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_8" sort="digit" total="avg"/>
+        <col type="data" name="col_loadavg_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_memrej" fullwidth="yes">
+      <col type="data" name="memrej"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_memrej_0"/>
+          <line data="col_memrej_1"/>
+          <line data="col_memrej_2"/>
+          <line data="col_memrej_3"/>
+          <line data="col_memrej_4"/>
+          <line data="col_memrej_5"/>
+          <line data="col_memrej_6"/>
+          <line data="col_memrej_7"/>
+          <line data="col_memrej_8"/>
+          <line data="col_memrej_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_memrej_0" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_1" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_2" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_3" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_4" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_5" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_6" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_7" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_8" sort="digit" total="avg"/>
+        <col type="data" name="col_memrej_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_numprocrej" fullwidth="yes">
+      <col type="data" name="numprocrej"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_numprocrej_0"/>
+          <line data="col_numprocrej_1"/>
+          <line data="col_numprocrej_2"/>
+          <line data="col_numprocrej_3"/>
+          <line data="col_numprocrej_4"/>
+          <line data="col_numprocrej_5"/>
+          <line data="col_numprocrej_6"/>
+          <line data="col_numprocrej_7"/>
+          <line data="col_numprocrej_8"/>
+          <line data="col_numprocrej_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_numprocrej_0" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_1" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_2" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_3" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_4" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_5" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_6" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_7" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_8" sort="digit" total="avg"/>
+        <col type="data" name="col_numprocrej_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_numfilerej" fullwidth="yes">
+      <col type="data" name="numfilerej"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_numfilerej_0"/>
+          <line data="col_numfilerej_1"/>
+          <line data="col_numfilerej_2"/>
+          <line data="col_numfilerej_3"/>
+          <line data="col_numfilerej_4"/>
+          <line data="col_numfilerej_5"/>
+          <line data="col_numfilerej_6"/>
+          <line data="col_numfilerej_7"/>
+          <line data="col_numfilerej_8"/>
+          <line data="col_numfilerej_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_numfilerej_0" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_1" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_2" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_3" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_4" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_5" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_6" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_7" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_8" sort="digit" total="avg"/>
+        <col type="data" name="col_numfilerej_9" sort="digit" total="avg"/>
+      </band>
+    </band>
+    <band name="report_top_numproc" fullwidth="yes">
+      <col type="data" name="numproc"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_numproc_0"/>
+          <line data="col_numproc_1"/>
+          <line data="col_numproc_2"/>
+          <line data="col_numproc_3"/>
+          <line data="col_numproc_4"/>
+          <line data="col_numproc_5"/>
+          <line data="col_numproc_6"/>
+          <line data="col_numproc_7"/>
+          <line data="col_numproc_8"/>
+          <line data="col_numproc_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_numproc_0" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_1" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_2" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_3" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_4" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_5" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_6" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_7" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_8" sort="digit" total="max"/>
+        <col type="data" name="col_numproc_9" sort="digit" total="max"/>
+      </band>
+    </band>
+    <band name="report_top_numfile" fullwidth="yes">
+      <col type="data" name="numfile"/>
+      <band name="data" hidden="yes" fullwidth="yes">
+        <diagram type="line" label="time" name="diagram">
+          <line data="col_numfile_0"/>
+          <line data="col_numfile_1"/>
+          <line data="col_numfile_2"/>
+          <line data="col_numfile_3"/>
+          <line data="col_numfile_4"/>
+          <line data="col_numfile_5"/>
+          <line data="col_numfile_6"/>
+          <line data="col_numfile_7"/>
+          <line data="col_numfile_8"/>
+          <line data="col_numfile_9"/>
+        </diagram>
+        <col type="data" name="time" sort="alpha"/>
+        <col type="data" name="col_numfile_0" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_1" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_2" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_3" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_4" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_5" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_6" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_7" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_8" sort="digit" total="max"/>
+        <col type="data" name="col_numfile_9" sort="digit" total="max"/>
+      </band>
+    </band>
+  </metadata>
+  <metadata name="reporthostnode" type="report" level="admin+">
+    <form>
+      <period name="period"/>
+      <field name="interval">
+        <select name="interval"/>
+      </field>
+      <field name="hostnode">
+        <select name="hostnode"/>
+      </field>
+    </form>
+    <include name="reportcommon"/>
+    <include name="reporttop"/>
+  </metadata>
+  <lang name="ru">
+    <messages name="report">
+      <msg name="hour">Часы</msg>
+      <msg name="min">Минуты</msg>
+      <msg name="day">Дни</msg>
+      <msg name="interval">Интервал</msg>
+      <msg name="time">Время</msg>
+      <msg name="cpu">Процессор, %</msg>
+      <msg name="rx">Входящий трафик, GiB</msg>
+      <msg name="tx">Исходящий трафик, GiB</msg>
+      <msg name="iops">Операции ввода-вывода, IOPS</msg>
+      <msg name="mem">Использование памяти, %</msg>
+      <msg name="loadavg">Средняя загрузка системы</msg>
+      <msg name="memrej">Количество отказов памяти</msg>
+      <msg name="numprocrej">Количество отказов запуска процессов</msg>
+      <msg name="numfilerej">Количество отказов открытия файлов</msg>
+      <msg name="numproc">Открыто процессов</msg>
+      <msg name="numfile">Открыто файлов</msg>
+      <msg name="top10">Топ 10</msg>
+      <msg name="col_rx_0">col_0</msg>
+      <msg name="col_rx_1">col_1</msg>
+      <msg name="col_rx_2">col_2</msg>
+      <msg name="col_rx_3">col_3</msg>
+      <msg name="col_rx_4">col_4</msg>
+      <msg name="col_rx_5">col_5</msg>
+      <msg name="col_rx_6">col_6</msg>
+      <msg name="col_rx_7">col_7</msg>
+      <msg name="col_rx_8">col_8</msg>
+      <msg name="col_rx_9">col_9</msg>
+      <msg name="col_tx_0">col_0</msg>
+      <msg name="col_tx_1">col_1</msg>
+      <msg name="col_tx_2">col_2</msg>
+      <msg name="col_tx_3">col_3</msg>
+      <msg name="col_tx_4">col_4</msg>
+      <msg name="col_tx_5">col_5</msg>
+      <msg name="col_tx_6">col_6</msg>
+      <msg name="col_tx_7">col_7</msg>
+      <msg name="col_tx_8">col_8</msg>
+      <msg name="col_tx_9">col_9</msg>
+      <msg name="col_cpu_0">col_0</msg>
+      <msg name="col_cpu_1">col_1</msg>
+      <msg name="col_cpu_2">col_2</msg>
+      <msg name="col_cpu_3">col_3</msg>
+      <msg name="col_cpu_4">col_4</msg>
+      <msg name="col_cpu_5">col_5</msg>
+      <msg name="col_cpu_6">col_6</msg>
+      <msg name="col_cpu_7">col_7</msg>
+      <msg name="col_cpu_8">col_8</msg>
+      <msg name="col_cpu_9">col_9</msg>
+      <msg name="col_iops_0">col_0</msg>
+      <msg name="col_iops_1">col_1</msg>
+      <msg name="col_iops_2">col_2</msg>
+      <msg name="col_iops_3">col_3</msg>
+      <msg name="col_iops_4">col_4</msg>
+      <msg name="col_iops_5">col_5</msg>
+      <msg name="col_iops_6">col_6</msg>
+      <msg name="col_iops_7">col_7</msg>
+      <msg name="col_iops_8">col_8</msg>
+      <msg name="col_iops_9">col_9</msg>
+      <msg name="col_mem_0">col_0</msg>
+      <msg name="col_mem_1">col_1</msg>
+      <msg name="col_mem_2">col_2</msg>
+      <msg name="col_mem_3">col_3</msg>
+      <msg name="col_mem_4">col_4</msg>
+      <msg name="col_mem_5">col_5</msg>
+      <msg name="col_mem_6">col_6</msg>
+      <msg name="col_mem_7">col_7</msg>
+      <msg name="col_mem_8">col_8</msg>
+      <msg name="col_mem_9">col_9</msg>
+      <msg name="col_loadavg_0">col_0</msg>
+      <msg name="col_loadavg_1">col_1</msg>
+      <msg name="col_loadavg_2">col_2</msg>
+      <msg name="col_loadavg_3">col_3</msg>
+      <msg name="col_loadavg_4">col_4</msg>
+      <msg name="col_loadavg_5">col_5</msg>
+      <msg name="col_loadavg_6">col_6</msg>
+      <msg name="col_loadavg_7">col_7</msg>
+      <msg name="col_loadavg_8">col_8</msg>
+      <msg name="col_loadavg_9">col_9</msg>
+      <msg name="col_memrej_0">col_0</msg>
+      <msg name="col_memrej_1">col_1</msg>
+      <msg name="col_memrej_2">col_2</msg>
+      <msg name="col_memrej_3">col_3</msg>
+      <msg name="col_memrej_4">col_4</msg>
+      <msg name="col_memrej_5">col_5</msg>
+      <msg name="col_memrej_6">col_6</msg>
+      <msg name="col_memrej_7">col_7</msg>
+      <msg name="col_memrej_8">col_8</msg>
+      <msg name="col_memrej_9">col_9</msg>
+      <msg name="col_numprocrej_0">col_0</msg>
+      <msg name="col_numprocrej_1">col_1</msg>
+      <msg name="col_numprocrej_2">col_2</msg>
+      <msg name="col_numprocrej_3">col_3</msg>
+      <msg name="col_numprocrej_4">col_4</msg>
+      <msg name="col_numprocrej_5">col_5</msg>
+      <msg name="col_numprocrej_6">col_6</msg>
+      <msg name="col_numprocrej_7">col_7</msg>
+      <msg name="col_numprocrej_8">col_8</msg>
+      <msg name="col_numprocrej_9">col_9</msg>
+      <msg name="col_numfilerej_0">col_0</msg>
+      <msg name="col_numfilerej_1">col_1</msg>
+      <msg name="col_numfilerej_2">col_2</msg>
+      <msg name="col_numfilerej_3">col_3</msg>
+      <msg name="col_numfilerej_4">col_4</msg>
+      <msg name="col_numfilerej_5">col_5</msg>
+      <msg name="col_numfilerej_6">col_6</msg>
+      <msg name="col_numfilerej_7">col_7</msg>
+      <msg name="col_numfilerej_8">col_8</msg>
+      <msg name="col_numfilerej_9">col_9</msg>
+      <msg name="col_numproc_0">col_0</msg>
+      <msg name="col_numproc_1">col_1</msg>
+      <msg name="col_numproc_2">col_2</msg>
+      <msg name="col_numproc_3">col_3</msg>
+      <msg name="col_numproc_4">col_4</msg>
+      <msg name="col_numproc_5">col_5</msg>
+      <msg name="col_numproc_6">col_6</msg>
+      <msg name="col_numproc_7">col_7</msg>
+      <msg name="col_numproc_8">col_8</msg>
+      <msg name="col_numproc_9">col_9</msg>
+      <msg name="col_numfile_0">col_0</msg>
+      <msg name="col_numfile_1">col_1</msg>
+      <msg name="col_numfile_2">col_2</msg>
+      <msg name="col_numfile_3">col_3</msg>
+      <msg name="col_numfile_4">col_4</msg>
+      <msg name="col_numfile_5">col_5</msg>
+      <msg name="col_numfile_6">col_6</msg>
+      <msg name="col_numfile_7">col_7</msg>
+      <msg name="col_numfile_8">col_8</msg>
+      <msg name="col_numfile_9">col_9</msg>
+    </messages>
+    <messages name="reporthostnode">
+      <msg name="title">Отчет о нагрузке кластера</msg>
+      <msg name="report_name">Нагрузка узла кластера __name__</msg>
+      <msg name="hostnode">Узел кластера</msg>
+    </messages>
+  </lang>
+</mgrdata>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<lang name="ru">
+<!--		<messages name="desktop">
+			<msg name="srvset">Настройки</msg>
+		</messages>-->
+		<messages name="alert">
+			<msg name="server_need_restart">Для того чтобы настройки вступили в силу нужно перезапустить сервер.</msg>
+		</messages>
+		<messages name="msgerror">
+			<msg name="msg_error_no_installed_games">Данный тип игры не установлен ни на одном узле</msg>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_srvset">Управление</msg>
+			<msg name="menu_ftpconf">FTP доступ</msg>
+      <msg name="menu_adminpass">Set Admin Pass</msg>
+		</messages>
+		<messages name="ftpconf">
+			<msg name="title">Настройка FTP</msg>
+			<msg name="title_new">Настройка FTP</msg>
+			<msg name="passwd">Пароль</msg>
+			<msg name="confirm">Подтверждение</msg>
+			<msg name="address">Адрес сервера</msg>
+			<msg name="user">Пользователь</msg>
+			<msg name="agree">Я понимаю, что мои действия могут привести к выходу сервера из строя</msg>
+			<msg name="turn_on_ftp">Включить FTP-доступ</msg>
+		</messages>
+		<messages name="stopserver_confirmform">
+			<msg name="title">Остановка сервера</msg>
+			<msg name="title_new">Остановка сервера</msg>
+			<msg name="confirmfield">Вы уверены что хотите остановить сервер?</msg>
+		</messages>
+		<messages name="startserver_confirmform">
+			<msg name="title">Запуск/перезапуск сервера</msg>
+			<msg name="title_new">Запуск/перезапуск сервера</msg>
+			<msg name="confirmfield">Вы уверены что хотите запустить/перезапустить сервер?</msg>
+		</messages>
+		<messages name="playersdaystat">
+			<msg name="title">Статистика посещаемости</msg>
+			<msg name="date">Дата</msg>
+			<msg name="players">Игроки</msg>
+		</messages>
+		<messages name="memdaystat">
+			<msg name="title">Статистика использования памяти</msg>
+			<msg name="date">Дата</msg>
+			<msg name="memory">Память (Мб)</msg>
+		</messages>
+		<messages name="game.reinstall">
+			<msg name="title">Переустановка сервера</msg>
+			<msg name="title_new">Переустановка сервера</msg>
+			<msg name="installeddist">Текущая версия</msg>
+			<msg name="clear_on_reinstall">Удалить все данные текущего сервера</msg>
+			<msg name="hint_clear_on_reinstall">Будут удалены все данные текущего сервера, включая плагины, карты и загруженные пользователем файлы</msg>
+			<msg name="dist">Установить</msg>
+		</messages>
+		</lang>
+</mgrdata>

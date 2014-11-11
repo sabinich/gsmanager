@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<mainmenu level="user">
+		<node name="srvset">
+			<node name="cs16.resume"/>
+			<node name="cs16.suspend"/>
+			<node name="cs16.reinstall"/>
+		</node>
+		<node name="set">
+			<node name="cs16"/>
+			<node name="cs16.plugin"/>
+			<node name="cs16.mapcycle"/>
+		</node>
+	</mainmenu>
+	<metadata name="cs16.state" type="list" key="name">
+		<coldata>
+			<col name="name" type="msg"/>
+			<col name="value" type="data">
+				<xprop name="status" img="p-on" value="on"/>
+				<xprop name="status" img="p-off" value="off"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="cs16" type="form">
+		<form>
+			<page name="server">
+				<field name="hostname">
+					<input type="text" name="hostname"/>
+				</field>
+				<field name="sv_contact">
+					<input type="text" name="sv_contact"/>
+				</field>
+				<field name="rcon_password">
+					<input type="text" name="rcon_password"/>
+				</field>
+				<field name="sv_password">
+					<input type="text" name="sv_password"/>
+				</field>
+				<field name="map">
+					<select name="map"/>
+				</field>
+				<field name="sv_region">
+					<select name="sv_region"/>
+				</field>
+			</page>
+			<page name="rounds">
+				<field name="pausable">
+					<input type="checkbox" name="pausable"/>
+				</field>
+				<field name="mp_timelimit">
+					<input type="text" name="mp_timelimit"/>
+				</field>
+				<field name="mp_freezetime">
+					<input type="text" name="mp_freezetime" />
+				</field>
+				<field name="mp_c4timer">
+					<input type="text" name="mp_c4timer" />
+				</field>
+				<field name="mp_roundtime">
+					<input type="text" name="mp_roundtime" />
+				</field>
+				<field name="mp_startmoney">
+					<input type="text" name="mp_startmoney" />
+				</field>
+			</page>
+			<page name="players">
+				<field name="allow_spectators">
+					<input type="text" name="allow_spectators"/>
+				</field>
+				<field name="mp_autoteambalance">
+					<input type="checkbox" name="mp_autoteambalance"/>
+				</field>
+				<field name="mp_limitteams">
+					<input type="text" name="mp_limitteams"/>
+				</field>
+				<field name="mp_falldamage">
+					<input type="checkbox" name="mp_falldamage"/>
+				</field>
+				<field name="mp_autokick">
+					<input type="text" name="mp_autokick"/>
+				</field>
+				<field name="mp_friendlyfire">
+					<input type="text" name="mp_friendlyfire"/>
+				</field>
+				<field name="mp_hostagepenalty">
+					<input type="text" name="mp_hostagepenalty"/>
+				</field>
+			</page>
+			<page name="apply">
+				<field name="restart" fullwidth="yes">
+					<input name="restart" type="checkbox" required="yes"/>
+					<desc name="restartdesc"/>
+				</field>
+			</page>
+		</form>
+	</metadata>
+	<metadata name="cs16.plugin" type="list" key="name">
+		<toolbar>
+			<toolbtn func="cs16.plugin.install" name="install" img="t-on" type="group"/>
+			<toolbtn func="cs16.plugin.delete" name="delete" img="t-off" type="group"/>
+			<toolbtn func="cs16.plugin.edit" name="edit" img="t-attr" type="edit"/>
+		</toolbar>
+		<coldata>
+			<col name="name" type="data"/>
+			<col name="status" sort="prop">
+				<xprop name="installed" img="p-on" value="on" stat="yes"/>
+				<xprop name="installed" img="p-off" value="off" stat="yes"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="cs16.plugin.showdamage" type="form">
+		<form title="name">
+			<field name="config" fullwidth="yes">
+				<textarea name="config" warp="off" rows="30"/>
+			</field>
+		</form>
+	</metadata>
+	<metadata name="cs16.mapcycle" type="list" key="order">
+		<toolbar>
+			<toolbtn func="cs16.mapcycle.edit" name="new" img="t-new" type="new"/>
+			<toolbtn func="cs16.mapcycle.edit" name="edit" img="t-edit" type="edit"/>
+			<toolbtn func="cs16.mapcycle.delete" name="delete" img="t-delete" type="group"/>
+			<toolsep/>
+			<toolbtn func="cs16.mapcycle.up" name="up" type="editlist" img="t-up" sametab="yes">
+				<hide name="is_boundary" value="first"/>
+			</toolbtn>
+			<toolbtn func="cs16.mapcycle.down" name="down" type="editlist" img="t-down" sametab="yes">
+				<hide name="is_boundary" value="last"/>
+			</toolbtn>
+		</toolbar>
+		<coldata>
+			<col name="order" type="data" hidden="yes"/>
+			<col name="map" type="data"/>
+		</coldata>
+	</metadata>
+	<metadata name="cs16.mapcycle.edit" type="form">
+		<form>
+			<field name="map">
+				<select name="map"/>
+			</field>
+		</form>
+	</metadata>
+	
+	<metadata name="cs16.resume" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="cs16.suspend" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="cs16.reinstall" type="form">
+		<include name="game.reinstall"/>
+	</metadata>
+	
+	<lang name="ru">
+		<messages name="cs16.suspend">
+			<include name="stopserver_confirmform"/>
+		</messages>
+		<messages name="cs16.resume">
+			<include name="startserver_confirmform"/>
+		</messages>
+		<messages name="cs16">
+			<msg name="title">Редактирование параметров сервера CS 1.6</msg>
+			<msg name="server">Сервер</msg>
+			<msg name="hostname">Имя сервера</msg>
+			<msg name="sv_contact">Адрес администратора</msg>
+			<msg name="rcon_password">Пароль для RCON</msg>
+			<msg name="sv_password">Пароль для игры</msg>
+			<msg name="map">Карта по умолчанию</msg>
+			<msg name="sv_region">Регион</msg>
+
+			<msg name="rounds">Раунд</msg>
+			<msg name="pausable">Разрешены паузы</msg>
+			<msg name="mp_timelimit">Максимальное время карты</msg>
+			<msg name="mp_freezetime">Время на закупку</msg>
+			<msg name="mp_c4timer">Время до взрыва</msg>
+			<msg name="mp_roundtime">Время раунда</msg>
+			<msg name="mp_startmoney">Начальное количество денег</msg>
+
+			<msg name="players">Игроки</msg>
+			<msg name="allow_spectators">Разрешённое количество наблюдателей</msg>
+			<msg name="mp_autoteambalance">Включить автобаланс</msg>
+			<msg name="mp_limitteams">Допустимая разница в игроках</msg>
+			<msg name="mp_falldamage">Реалистичное повреждение от падения</msg>
+			<msg name="mp_autokick">Кикать тим киллеров и бездействующих</msg>
+			<msg name="mp_friendlyfire">Дружественный огонь</msg>
+			<msg name="mp_hostagepenalty">Разрешено убить заложников</msg>
+
+			<msg name="apply">Применение настроек</msg>
+			<msg name="restartdesc">Применить параметры сервера сразу после нажатия кнопки OK. Запускает или перезапускает сервер.</msg>
+		</messages>
+		<messages name="dashboard">
+			<msg name="cs16toolbar_configure">Изменить конфигурацию</msg>
+			<msg name="cs16toolbar_resume">Запустить/ Перезапустить</msg>
+			<msg name="cs16toolbar_suspend">Остановить</msg>
+			<msg name="cs16toolbar_reinstall">Переустановить</msg>
+			<msg name="title_cs16toolbar">Управление сервером CS 1.6</msg>
+		</messages>
+		<messages name="cs16.state">
+			<msg name="title">Состояние сервера</msg>
+			<msg name="name">Параметр</msg>
+			<msg name="value">Значение</msg>
+			<msg name="name_players_online">Игроков на сервере</msg>
+			<msg name="name_port">Порт сервера</msg>
+			<msg name="name_ip">IP-адрес сервера</msg>
+			<msg name="name_server_online">Сервер запущен</msg>
+			<msg name="name_server_offline">Сервер остановлен</msg>
+			<msg name="hint_p_status_on">Сервер запущен</msg>
+			<msg name="hint_p_status_off">Сервер остановлен</msg>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_cs16.resume">Перезапустить</msg>
+			<msg name="menu_cs16.reinstall">Переустановить</msg>
+			<msg name="menu_cs16.suspend">Остановить</msg>
+			<msg name="menu_cs16">Конфигурация</msg>
+			<msg name="menu_cs16.plugin">Плагины</msg>
+			<msg name="menu_cs16.mapcycle">Цикл карт</msg>
+		</messages>
+		<messages name="cs16.plugin">
+			<msg name="title">Управление плагинами CS 1.6</msg>
+			<msg name="name">Имя</msg>
+			<msg name="status">Состояние</msg>
+			<msg name="hint_p_installed_on">Установлен</msg>
+			<msg name="hint_p_installed_off">Не установлен</msg>
+			<msg name="short_edit">Настроить</msg>
+			<msg name="short_install">Установить</msg>
+		</messages>
+		<messages name="cs16.mapcycle">
+			<msg name="title">Порядок карт</msg>
+			<msg name="map">Карта</msg>
+			<msg name="short_up">Играть раньше</msg>
+			<msg name="short_down">Играть позже</msg>
+		</messages>
+		<messages name="cs16.mapcycle.edit">
+			<msg name="title">Изменение карты</msg>
+			<msg name="map">Карта</msg>
+		</messages>
+		<messages name="cs16.reinstall">
+			<include name="game.reinstall"/>
+		</messages>
+	</lang>
+</mgrdata>

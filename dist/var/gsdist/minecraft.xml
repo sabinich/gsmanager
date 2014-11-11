@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<game name="Minecraft">
+<!--	<version name="Minecraft 1.7.2">
+		<url>https://s3.amazonaws.com/Minecraft.Download/versions/1.7.2/minecraft_server.1.7.2.jar</url>
+	</version>
+	<version name="Minecraft 1.6.4">
+		<url>https://s3.amazonaws.com/Minecraft.Download/versions/1.6.4/minecraft_server.1.6.4.jar</url>
+	</version>
+	<version name="Minecraft 1.6.2">
+		<url>https://s3.amazonaws.com/Minecraft.Download/versions/1.6.2/minecraft_server.1.6.2.jar</url>
+	</version>
+	<version name="Minecraft 1.5.2">
+		<url>https://s3.amazonaws.com/Minecraft.Download/versions/1.5.2/minecraft_server.1.5.2.jar</url>
+	</version>-->
+	<version name="Bukkit 1.6.4-R1.0">
+		<url>http://dl.bukkit.org/downloads/craftbukkit/get/02381_1.6.4-R1.0/craftbukkit.jar</url>
+		<plugin name="DynMap">
+			<url>http://dev.bukkit.org/media/files/740/863/dynmap-1.9.jar</url>
+			<info>A Google Maps-like map for your Minecraft server that can be viewed in a browser.</info>
+		</plugin>
+		<plugin name="ClearLag">
+			<url>http://dev.bukkit.org/media/files/743/213/Clearlag.jar</url>
+			<info>This plugin is made for small servers to big servers, it's made to remove all entities to prevent/clear lag.</info>
+		</plugin>
+		<plugin name="WorldEdit">
+			<url>http://dev.bukkit.org/media/files/739/932/worldedit-5.5.8.zip</url>
+			<info>WorldEdit is an easy-to-use in-game world editor for Minecraft, supporting both single player and multiplayer</info>
+		</plugin>
+		<plugin name="Essentials">
+			<url></url>
+			<info>Essentials offers over 100 commands and features useful on just about every server.</info>
+		</plugin>
+		<plugin name="PermissionsEx">
+			<url>http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar</url>
+			<info>PermissionsEx (PEX) is a new permissions plugin, based on Permissions ideas and supports all of its features. </info>
+		</plugin>
+		<plugin name="Factions">
+			<url>http://dev.bukkit.org/media/files/740/172/Factions.jar</url>
+			<info>This plugin allows you to create your own faction. The more followers a faction has the more land the faction can claim.</info>
+		</plugin>
+		<plugin name="WorldGuard">
+			<url>http://dev.bukkit.org/media/files/719/258/worldguard-5.8.zip</url>
+			<info>WorldGuard is a powerful plugin providing all the little things (and some big ones), and it protects your servers from various problems.</info>
+		</plugin>
+		<plugin name="AntiCheat">
+			<url>http://dev.bukkit.org/media/files/726/899/AntiCheat.jar</url>
+			<info>AntiCheat helps server admins easily identify and block malicious users by monitoring and analyzing the behavior of your players.</info>
+		</plugin>
+		<plugin name="mcMMO">
+			<url>http://dev.bukkit.org/media/files/748/895/mcMMO.jar</url>
+			<info>The goal of mcMMO is to take core Minecraft game mechanics and expand them into add an extensive and quality RPG experience.</info>
+		</plugin>
+		<plugin name="MobHealth">
+			<url>http://dev.bukkit.org/media/files/726/662/MobHealth.jar</url>
+			<info>This simple but invaluable plugin lets you know the damage you just caused to a mob (including other players), and how much health it has left.</info>
+		</plugin>
+	</version>
+	<version name="Bukkit 1.6.2-R1.0">
+		<url>http://dl.bukkit.org/downloads/craftbukkit/get/02342_1.6.2-R1.0/craftbukkit.jar</url>
+		<plugin name="DynMap">
+			<url>http://dev.bukkit.org/media/files/740/863/dynmap-1.9.jar</url>
+			<info>A Google Maps-like map for your Minecraft server that can be viewed in a browser</info>
+		</plugin>
+		<plugin name="ClearLag">
+			<url>http://dev.bukkit.org/media/files/743/213/Clearlag.jar</url>
+			<info>This plugin is made for small servers to big servers, it's made to remove all entities to prevent/clear lag.</info>
+		</plugin>
+		<plugin name="WorldEdit">
+			<url>http://dev.bukkit.org/media/files/739/932/worldedit-5.5.8.zip</url>
+			<info>WorldEdit is an easy-to-use in-game world editor for Minecraft, supporting both single player and multiplayer</info>
+		</plugin>
+		<plugin name="Essentials">
+			<url></url>
+			<info>Essentials offers over 100 commands and features useful on just about every server.</info>
+		</plugin>
+		<plugin name="PermissionsEx">
+			<url>http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar</url>
+			<info>PermissionsEx (PEX) is a new permissions plugin, based on Permissions ideas and supports all of its features. </info>
+		</plugin>
+		<plugin name="Factions">
+			<url>http://dev.bukkit.org/media/files/740/172/Factions.jar</url>
+			<info>This plugin allows you to create your own faction. The more followers a faction has the more land the faction can claim.</info>
+		</plugin>
+		<plugin name="WorldGuard">
+			<url>http://dev.bukkit.org/media/files/719/258/worldguard-5.8.zip</url>
+			<info>WorldGuard is a powerful plugin providing all the little things (and some big ones), and it protects your servers from various problems.</info>
+		</plugin>
+		<plugin name="AntiCheat">
+			<url>http://dev.bukkit.org/media/files/726/899/AntiCheat.jar</url>
+			<info>AntiCheat helps server admins easily identify and block malicious users by monitoring and analyzing the behavior of your players.</info>
+		</plugin>
+		<plugin name="mcMMO">
+			<url>http://dev.bukkit.org/media/files/748/895/mcMMO.jar</url>
+			<info>The goal of mcMMO is to take core Minecraft game mechanics and expand them into add an extensive and quality RPG experience.</info>
+		</plugin>
+		<plugin name="MobHealth">
+			<url>http://dev.bukkit.org/media/files/726/662/MobHealth.jar</url>
+			<info>This simple but invaluable plugin lets you know the damage you just caused to a mob (including other players), and how much health it has left.</info>
+		</plugin>
+	</version>
+	<version name="Bukkit 1.5.2-R1.0">
+		<url>http://dl.bukkit.org/downloads/craftbukkit/get/02169_1.5.2-R1.0/craftbukkit.jar</url>
+		<plugin name="DynMap">
+			<url>http://dev.bukkit.org/media/files/740/863/dynmap-1.9.jar</url>
+			<info>A Google Maps-like map for your Minecraft server that can be viewed in a browser</info>
+		</plugin>
+		<plugin name="ClearLag">
+			<url>http://dev.bukkit.org/media/files/743/213/Clearlag.jar</url>
+			<info>This plugin is made for small servers to big servers, it's made to remove all entities to prevent/clear lag.</info>
+		</plugin>
+		<plugin name="WorldEdit">
+			<url>http://dev.bukkit.org/media/files/739/932/worldedit-5.5.8.zip</url>
+			<info>WorldEdit is an easy-to-use in-game world editor for Minecraft, supporting both single player and multiplayer</info>
+		</plugin>
+		<plugin name="Essentials">
+			<url></url>
+			<info>Essentials offers over 100 commands and features useful on just about every server.</info>
+		</plugin>
+		<plugin name="PermissionsEx">
+			<url>http://dev.bukkit.org/media/files/742/103/PermissionsEx.jar</url>
+			<info>PermissionsEx (PEX) is a new permissions plugin, based on Permissions ideas and supports all of its features. </info>
+		</plugin>
+		<plugin name="Factions">
+			<url>http://dev.bukkit.org/media/files/740/172/Factions.jar</url>
+			<info>This plugin allows you to create your own faction. The more followers a faction has the more land the faction can claim.</info>
+		</plugin>
+		<plugin name="WorldGuard">
+			<url>http://dev.bukkit.org/media/files/719/258/worldguard-5.8.zip</url>
+			<info>WorldGuard is a powerful plugin providing all the little things (and some big ones), and it protects your servers from various problems.</info>
+		</plugin>
+		<plugin name="AntiCheat">
+			<url>http://dev.bukkit.org/media/files/726/899/AntiCheat.jar</url>
+			<info>AntiCheat helps server admins easily identify and block malicious users by monitoring and analyzing the behavior of your players.</info>
+		</plugin>
+		<plugin name="mcMMO">
+			<url>http://dev.bukkit.org/media/files/748/895/mcMMO.jar</url>
+			<info>The goal of mcMMO is to take core Minecraft game mechanics and expand them into add an extensive and quality RPG experience.</info>
+		</plugin>
+		<plugin name="MobHealth">
+			<url>http://dev.bukkit.org/media/files/726/662/MobHealth.jar</url>
+			<info>This simple but invaluable plugin lets you know the damage you just caused to a mob (including other players), and how much health it has left.</info>
+		</plugin>
+	</version>
+</game>

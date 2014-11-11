@@ -1,0 +1,3 @@
+[submodule "ostemplate-lib"]
+	path = ostemplate-lib
+	url = git@vega.ispsystem.net:ostemplate-lib

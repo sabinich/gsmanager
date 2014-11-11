@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<mainmenu level="user">
+		<node name="srvset">
+			<node name="csgo.resume"/>
+			<node name="csgo.suspend"/>
+			<node name="csgo.reinstall"/>
+		</node>
+		<node name="set">
+			<node name="csgo"/>
+		</node>
+	</mainmenu>
+	<metadata name="csgo.state" type="list" key="name">
+		<coldata>
+			<col name="name" type="msg"/>
+			<col name="value" type="data">
+				<xprop name="status" img="p-on" value="on"/>
+				<xprop name="status" img="p-off" value="off"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="csgo" type="form">
+		<form title="name">
+			<page name="server">
+				<field name="hostname">
+					<input type="text" name="hostname"/>
+				</field>
+				<field name="gamemode">
+					<select name="gamemode"/>
+				</field>
+				<field name="rcon_password">
+					<input type="text" name="rcon_password"/>
+				</field>
+				<field name="sv_password">
+					<input type="text" name="sv_password"/>
+				</field>
+			</page>
+			<page name="gamemode_competitive">
+				<field name="competitive_bot_difficulty">
+					<input type="text" name="competitive_bot_difficulty" check="int" checkargs="0,3"/>
+				</field>
+				<field name="competitive_bot_quota">
+					<input type="text" name="competitive_bot_quota" check="int" checkargs="0,50"/>
+				</field>
+				<field name="competitive_mp_buytime">
+					<input type="text" name="competitive_mp_buytime"/>
+				</field>
+				<field name="competitive_mp_forcecamera">
+					<input type="checkbox" name="competitive_mp_forcecamera"/>
+				</field>
+				<field name="competitive_mp_freezetime">
+					<input type="text" name="competitive_mp_freezetime"/>
+				</field>
+				<field name="competitive_mp_friendlyfire">
+					<input type="checkbox" name="competitive_mp_friendlyfire"/>
+				</field>
+				<field name="competitive_mp_maxmoney">
+					<input type="text" name="competitive_mp_maxmoney"/>
+				</field>
+				<field name="competitive_mp_maxrounds">
+					<input type="text" name="competitive_mp_maxrounds"/>
+				</field>
+				<field name="competitive_mp_roundtime">
+					<input type="text" name="competitive_mp_roundtime"/>
+				</field>
+				<field name="competitive_mp_startmoney">
+					<input type="text" name="competitive_mp_startmoney"/>
+				</field>
+			</page>
+			<page name="gamemode_casual">
+				<field name="casual_bot_difficulty">
+					<input type="text" name="casual_bot_difficulty"/>
+				</field>
+				<field name="casual_bot_quota">
+					<input type="text" name="casual_bot_quota"/>
+				</field>
+				<field name="casual_mp_buytime">
+					<input type="text" name="casual_mp_buytime"/>
+				</field>
+				<field name="casual_mp_forcecamera">
+					<input type="checkbox" name="casual_mp_forcecamera"/>
+				</field>
+				<field name="casual_mp_freezetime">
+					<input type="text" name="casual_mp_freezetime"/>
+				</field>
+				<field name="casual_mp_friendlyfire">
+					<input type="checkbox" name="casual_mp_friendlyfire"/>
+				</field>
+				<field name="casual_mp_maxmoney">
+					<input type="text" name="casual_mp_maxmoney"/>
+				</field>
+				<field name="casual_mp_maxrounds">
+					<input type="text" name="casual_mp_maxrounds"/>
+				</field>
+				<field name="casual_mp_roundtime">
+					<input type="text" name="casual_mp_roundtime"/>
+				</field>
+				<field name="casual_mp_startmoney">
+					<input type="text" name="casual_mp_startmoney"/>
+				</field>
+			</page>
+			<page name="gamemode_deathmatch">
+				<field name="deathmatch_bot_difficulty">
+					<input type="text" name="deathmatch_bot_difficulty"/>
+				</field>
+				<field name="deathmatch_bot_quota">
+					<input type="text" name="deathmatch_bot_quota"/>
+				</field>
+				<field name="deathmatch_mp_maxrounds">
+					<input type="text" name="deathmatch_mp_maxrounds"/>
+				</field>
+				<field name="deathmatch_mp_roundtime">
+					<input type="text" name="deathmatch_mp_roundtime"/>
+				</field>
+			</page>
+			<page name="gamemode_armrace">
+				<field name="armrace_bot_difficulty">
+					<input type="text" name="armrace_bot_difficulty"/>
+				</field>
+				<field name="armrace_bot_quota">
+					<input type="text" name="armrace_bot_quota"/>
+				</field>
+				<field name="armrace_mp_respawn_immunitytime">
+					<input type="text" name="armrace_mp_respawn_immunitytime"/>
+				</field>
+				<field name="armrace_mp_maxrounds">
+					<input type="text" name="armrace_mp_maxrounds"/>
+				</field>
+				<field name="armrace_mp_roundtime">
+					<input type="text" name="armrace_mp_roundtime"/>
+				</field>
+			</page>
+			<page name="gamemode_demolition">
+				<field name="demolition_bot_difficulty">
+					<input type="text" name="demolition_bot_difficulty" check="int" checkargs="0,3"/>
+				</field>
+				<field name="demolition_bot_quota">
+					<input type="text" name="demolition_bot_quota"/>
+				</field>
+				<field name="demolition_mp_forcecamera">
+					<input type="checkbox" name="demolition_mp_forcecamera"/>
+				</field>
+				<field name="demolition_mp_freezetime">
+					<input type="text" name="demolition_mp_freezetime"/>
+				</field>
+				<field name="demolition_mp_friendlyfire">
+					<input type="checkbox" name="demolition_mp_friendlyfire"/>
+				</field>
+				<field name="demolition_mp_maxrounds">
+					<input type="text" name="demolition_mp_maxrounds"/>
+				</field>
+				<field name="demolition_mp_roundtime">
+					<input type="text" name="demolition_mp_roundtime"/>
+				</field>
+			</page>
+			<page name="apply">
+				<field name="restart" fullwidth="yes">
+					<input name="restart" type="checkbox" required="yes"/>
+					<desc name="restartdesc"/>
+				</field>
+			</page>
+		</form>
+	</metadata>
+	
+	<metadata name="csgo.resume" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="csgo.suspend" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="csgo.reinstall" type="form">
+		<include name="game.reinstall"/>
+	</metadata>
+	
+	<lang name="ru">
+		<messages name="csgo.suspend">
+			<include name="stopserver_confirmform"/>
+		</messages>
+		<messages name="csgo.resume">
+			<include name="startserver_confirmform"/>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_csgo">Конфигурация</msg>
+			<msg name="menu_csgo.resume">Перезапустить</msg>
+			<msg name="menu_csgo.suspend">Остановить</msg>
+			<msg name="menu_csgo.reinstall">Переустановить</msg>
+		</messages>
+		<messages name="dashboard">
+			<msg name="csgotoolbar_configure">Изменить конфигурацию</msg>
+			<msg name="csgotoolbar_resume">Запустить/ Перезапустить</msg>
+			<msg name="csgotoolbar_suspend">Остановить</msg>
+			<msg name="csgotoolbar_reinstall">Переустановить</msg>
+			<msg name="title_csgotoolbar">Управление сервером CS Global Offensive</msg>
+		</messages>
+		<messages name="csgo.state">
+			<msg name="title">Состояние сервера</msg>
+			<msg name="name">Параметр</msg>
+			<msg name="value">Значение</msg>
+			<msg name="name_players_online">Игроков на сервере</msg>
+			<msg name="name_port">Порт сервера</msg>
+			<msg name="name_ip">IP-адрес сервера</msg>
+			<msg name="name_server_online">Сервер запущен</msg>
+			<msg name="name_server_offline">Сервер остановлен</msg>
+			<msg name="hint_p_status_on">Сервер запущен</msg>
+			<msg name="hint_p_status_off">Сервер остановлен</msg>
+		</messages>
+		<messages name="csgo">
+			<msg name="title">Сервер CS Global Offensive</msg>
+			<msg name="server">Сервер</msg>
+			<msg name="hostname">Имя сервера</msg>
+			<msg name="hint_hostname">Имя сервера которой будет отображаться в списке серверов steam</msg>
+			<msg name="map">Карта (по умолч.)</msg>
+			<msg name="gamemode">Решим игры</msg>
+			<msg name="hint_gamemode">Выберите режим игры в котором будет запущен сервер</msg>
+			<msg name="sv_password">Пароль для игры</msg>
+			<msg name="hint_sv_password">Для доступа к вашему серверу игрокам нужно будет ввести этот пароль</msg>
+			<msg name="rcon_password">Пароль удалённой консоли</msg>
+			<msg name="hint_rcon_password">Пароль для доступа к удалённой консоли сервера</msg>
+			<msg name="gamemode_demolition">Режим Demolition (Уничтожение объекта)</msg>
+			<msg name="gamemode_armrace">Режим Arms Race (Гонка вооружений)</msg>
+			<msg name="gamemode_deathmatch">Режим Deathmatch (Бой насмерть)</msg>
+			<msg name="gamemode_casual">Режим Classic Casual (Классический облегченный)</msg>
+			<msg name="gamemode_competitive">Режим Classic Competitive (Классический соревновательный)</msg>
+			
+			<msg name="demolition">Demolition (Уничтожение объекта)</msg>
+			<msg name="armrace">Arms Race (Гонка вооружений)</msg>
+			<msg name="deathmatch">Deathmatch (Бой насмерть)</msg>
+			<msg name="casual">Classic Casual (Классический облегченный)</msg>
+			<msg name="competitive">Classic Competitive (Классический соревновательный)</msg>
+
+			<msg name="competitive_bot_difficulty">Уровень сложности ботов</msg>
+			<msg name="hint_competitive_bot_difficulty">Уровень сложности ботов, чем больше тем лучше боты играют</msg>
+			<msg name="competitive_bot_quota">Максимальное количество ботов</msg>
+			<msg name="hint_competitive_bot_quota">Максимальное количество ботов в игре</msg>
+			<msg name="competitive_mp_buytime">Время закупки снаряжения (сек.)</msg>
+			<msg name="hint_competitive_mp_buytime">Время, в течение которого игрокам разрешено покупать снаряжение (сек.)</msg>
+			<msg name="competitive_mp_forcecamera">Наблюдать после смерти только за своей командой</msg>
+			<msg name="hint_competitive_mp_forcecamera">После смерти игрок сможет наблюдать только за игроками своей команды</msg>
+			<msg name="competitive_mp_freezetime">Запрет движения в начале раунда (сек.)</msg>
+			<msg name="hint_competitive_mp_freezetime">Время после начала раунда, в течение которого игроки не смогут двигаться (сек.)</msg>
+			<msg name="competitive_mp_friendlyfire">Огонь по своим</msg>
+			<msg name="hint_competitive_mp_friendlyfire">Будут засчитываться попадания по игрокам своей команды</msg>
+			<msg name="competitive_mp_maxmoney">Максимальное количество денег у игрока</msg>
+			<msg name="hint_competitive_mp_maxmoney">Максимальное количество денег, которое может быть у игрока</msg>
+			<msg name="competitive_mp_maxrounds">Максимальное количество раундов</msg>
+			<msg name="hint_competitive_mp_maxrounds">Максимальное количество раундов перед автоматической сменой карты</msg>
+			<msg name="competitive_mp_roundtime">Время раунда (минут)</msg>
+			<msg name="hint_competitive_mp_roundtime">Время отведённое на раунд (минут)</msg>
+			<msg name="competitive_mp_startmoney">Начальное количество денег у игрока</msg>
+			<msg name="hint_competitive_mp_startmoney">Начальное количество денег, которое получит игрок после смены карты</msg>
+			
+			<msg name="casual_bot_difficulty">Уровень сложности ботов</msg>
+			<msg name="hint_casual_bot_difficulty">Уровень сложности ботов, чем больше тем лучше боты играют</msg>
+			<msg name="casual_bot_quota">Максимальное количество ботов</msg>
+			<msg name="hint_casual_bot_quota">Максимальное количество ботов в игре</msg>
+			<msg name="casual_mp_buytime">Время закупки снаряжения (сек.)</msg>
+			<msg name="hint_casual_mp_buytime">Время, в течение которого игрокам разрешено покупать снаряжение (сек.)</msg>
+			<msg name="casual_mp_forcecamera">Наблюдать после смерти только за своей командой</msg>
+			<msg name="hint_casual_mp_forcecamera">После смерти игрок сможет наблюдать только за игроками своей команды</msg>
+			<msg name="casual_mp_freezetime">Запрет движения в начале раунда (сек.)</msg>
+			<msg name="hint_casual_mp_freezetime">Время после начала раунда, в течение которого игроки не смогут двигаться (сек.)</msg>
+			<msg name="casual_mp_friendlyfire">Огонь по своим</msg>
+			<msg name="hint_casual_mp_friendlyfire">Будут засчитываться попадания по игрокам своей команды</msg>
+			<msg name="casual_mp_maxmoney">Максимальное количество денег у игрока</msg>
+			<msg name="hint_casual_mp_maxmoney">Максимальное количество денег, которое может быть у игрока</msg>
+			<msg name="casual_mp_maxrounds">Максимальное количество раундов</msg>
+			<msg name="hint_casual_mp_maxrounds">Максимальное количество раундов перед автоматической сменой карты</msg>
+			<msg name="casual_mp_roundtime">Время раунда (минут)</msg>
+			<msg name="hint_casual_mp_roundtime">Время отведённое на раунд (минут)</msg>
+			<msg name="casual_mp_startmoney">Начальное количество денег у игрока</msg>
+			<msg name="hint_casual_mp_startmoney">Начальное количество денег, которое получит игрок после смены карты</msg>
+			
+			<msg name="deathmatch_bot_difficulty">Уровень сложности ботов</msg>
+			<msg name="hint_deathmatch_bot_difficulty">Уровень сложности ботов, чем больше тем лучше боты играют</msg>
+			<msg name="deathmatch_bot_quota">Максимальное количество ботов</msg>
+			<msg name="hint_deathmatch_bot_quota">Максимальное количество ботов в игре</msg>
+			<msg name="deathmatch_mp_maxrounds">Максимальное количество раундов</msg>
+			<msg name="hint_deathmatch_mp_maxrounds">Максимальное количество раундов перед автоматической сменой карты</msg>
+			<msg name="deathmatch_mp_roundtime">Время раунда (минут)</msg>
+			<msg name="hint_deathmatch_mp_roundtime">Время отведённое на раунд (минут)</msg>
+			
+			<msg name="armrace_bot_difficulty">Уровень сложности ботов</msg>
+			<msg name="hint_armrace_bot_difficulty">Уровень сложности ботов, чем больше тем лучше боты играют</msg>
+			<msg name="armrace_bot_quota">Максимальное количество ботов</msg>
+			<msg name="hint_armrace_bot_quota">Максимальное количество ботов в игре</msg>
+			<msg name="armrace_mp_maxrounds">Максимальное количество раундов</msg>
+			<msg name="hint_armrace_mp_maxrounds">Максимальное количество раундов перед автоматической сменой карты</msg>
+			<msg name="armrace_mp_roundtime">Время раунда (минут)</msg>
+			<msg name="hint_armrace_mp_roundtime">Время отведённое на раунд (минут)</msg>
+			<msg name="armrace_mp_respawn_immunitytime">Время неуязвимости после возрождения (сек.)</msg>
+			<msg name="hint_armrace_mp_respawn_immunitytime">Время неуязвимости после возрождения (сек.)</msg>
+
+			<msg name="demolition_bot_difficulty">Уровень сложности ботов</msg>
+			<msg name="hint_demolition_bot_difficulty">Уровень сложности ботов, чем больше тем лучше боты играют</msg>
+			<msg name="demolition_bot_quota">Максимальное количество ботов</msg>
+			<msg name="hint_demolition_bot_quota">Максимальное количество ботов в игре</msg>
+			<msg name="demolition_mp_forcecamera">Наблюдать после смерти только за своей командой</msg>
+			<msg name="hint_demolition_mp_forcecamera">После смерти игрок сможет наблюдать только за игроками своей команды</msg>
+			<msg name="demolition_mp_freezetime">Запрет движения в начале раунда (сек.)</msg>
+			<msg name="hint_demolition_mp_freezetime">Время после начала раунда, в течение которого игроки не смогут двигаться (сек.)</msg>
+			<msg name="demolition_mp_friendlyfire">Огонь по своим</msg>
+			<msg name="hint_demolition_mp_friendlyfire">Будут засчитываться попадания по игрокам своей команды</msg>
+			<msg name="demolition_mp_maxrounds">Максимальное количество раундов</msg>
+			<msg name="hint_demolition_mp_maxrounds">Максимальное количество раундов перед автоматической сменой карты</msg>
+			<msg name="demolition_mp_roundtime">Время раунда (минут)</msg>
+			<msg name="hint_demolition_mp_roundtime">Время отведённое на раунд (минут)</msg>
+			
+			<msg name="apply">Применение настроек</msg>
+			<msg name="restartdesc">Применить параметры сервера сразу после нажатия кнопки OK. Запускает или перезапускает сервер.</msg>
+		</messages>
+		<messages name="csgo.reinstall">
+			<include name="game.reinstall"/>
+		</messages>
+	</lang>
+</mgrdata>

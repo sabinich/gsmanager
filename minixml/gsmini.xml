@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<metadata name="ftpconf" type="form">
+		<form title="name">
+			<field name="turn_on_ftp">
+				<input type="checkbox" name="turn_on_ftp">
+					<if value="off" hide="agree"/>
+					<if value="off" hide="user"/>
+					<if value="off" hide="address"/>
+					<if value="off" hide="passwd"/>
+				</input>
+			</field>
+			<field name="agree" fullwidht="yes">
+				<input type="checkbox" name="agree">
+					<if value="off" hide="user"/>
+					<if value="off" hide="address"/>
+					<if value="off" hide="passwd"/>
+				</input>
+			</field>
+			<field name="user">
+				<input type="text" name="user" readonly="yes"/>
+			</field>
+			<field name="address">
+				<input type="text" name="address" readonly="yes"/>
+			</field>
+			<field name="passwd">
+				<input type="text" name="passwd"/>
+			</field>
+		</form>
+	</metadata>
+	
+	<metadata name="playersdaystat" type="report">
+		<band name="data" psort="date" fullwidth="yes">
+			<diagram type="line" label="date" name="diagram_traffic">
+				<line data="players"/>
+			</diagram>
+			<col name="date" type="data"/>
+			<col name="players" type="data" sort="digit"/>
+		</band>
+	</metadata>
+	
+	<metadata name="memdaystat" type="report">
+		<band name="data" psort="date" fullwidth="yes">
+			<diagram type="line" label="date" name="diagram_traffic">
+				<line data="memory"/>
+			</diagram>
+			<col name="date" type="data"/>
+			<col name="memory" type="data" sort="digit"/>
+		</band>
+	</metadata>
+
+  <metadata name="adminpass" type="form">
+    <form title="name">
+      <field name="passwd">
+        <input type="text" name="passwd"/>
+      </field>
+    </form>
+  </metadata>
+
+  <metadata name="confirmform" type="form">
+		<form title="name">
+			<field name="theconfirmfield">
+				<textdata type="msg" name="confirmfield"/>
+			</field>
+		</form>
+	</metadata>
+
+	<metadata name="game.reinstall" type="form">
+		<form title="name">
+			<field name="installeddist">
+				<input type="text" name="installeddist" readonly="yes"/>
+			</field>
+			<field name="dist">
+				<select name="dist"/>
+			</field>
+			<field name="clear_on_reinstall">
+				<input type="checkbox" name="clear_on_reinstall"/>
+			</field>
+		</form>
+	</metadata>
+	
+	<handler name="filemgr" type="xml">
+     <func name="file"/>
+     <func name="file.folder"/>
+     <func name="file.new"/>
+     <func name="file.edit"/>
+     <func name="file.unixattr"/>
+     <func name="file.winattr"/>
+     <func name="file.delete"/>
+     <func name="file.extract"/>
+     <func name="file.pack"/>
+     <func name="file.copyto"/>
+     <func name="file.download"/>
+     <func name="file.settings"/>
+   </handler>
+ 
+	
+</mgrdata>

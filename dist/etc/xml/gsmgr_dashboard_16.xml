@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF8"?>
+<doc>
+	<block name="servers" position="left" type="list" func="server" rows="10">
+		<col name="name"/>
+		<col name="type"/>
+		<col name="ip"/>
+		<col name="port"/>
+		<col name="status"/>
+		<col name="players"/>
+	</block>
+</doc>
+

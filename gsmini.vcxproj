@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\.addon\.version.cpp" />
+    <ClCompile Include="arma3\arma3_mini.cpp" />
+    <ClCompile Include="mini\distr.cpp" />
+    <ClCompile Include="mini\ftp.cpp" />
+    <ClCompile Include="mini\gamemodule.cpp" />
+    <ClCompile Include="mini\gsmini.cpp" />
+    <ClCompile Include="mini\instance.cpp" />
+    <ClCompile Include="mini\nodestat_mini.cpp" />
+    <ClCompile Include="mini\portmgr.cpp" />
+    <ClCompile Include="mini\serverstat.cpp" />
+    <ClCompile Include="mini\steammodule.cpp" />
+    <ClCompile Include="mini\win_common.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DB2F9F01-104F-42C8-A2E8-B6849D8824B2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libmgr</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="versions.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="versions.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\</OutDir>
+    <LibraryPath>..\..;..\..\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\</OutDir>
+    <LibraryPath>..\..;..\..\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;_DO_NOT_USE_NULLPTR_IN_ATL;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <Version>5.0.1</Version>
+    </Link>
+    <PostBuildEvent>
+      <Command>mkdir "$(IntDir)..\xml"
+"..\..\xmlinstall.exe" -M ru -v "$(Version)" -m "gsmini" minixml teamfortress/teamfortress.xml minecraft/minecraft.xml cs16/cs16.xml gta/gta.xml csgo/csgo.xml left4dead2/left4dead2.xml "$(IntDir)..\xml\gsmini_msg_ru.xml"
+xcopy "$(IntDir)..\xml\gsmini_msg_ru.xml" ..\..\etc\xml\ /Y
+"..\..\xmlinstall.exe" -I -v "$(Version)" -m "gsmini" minixml teamfortress/teamfortress.xml minecraft/minecraft.xml cs16/cs16.xml gta/gta.xml csgo/csgo.xml left4dead2/left4dead2.xml "$(IntDir)..\xml\gsmini.xml"
+xcopy "$(IntDir)..\xml\gsmini.xml" ..\..\etc\xml\ /Y
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Install xml files for gsmini</Message>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>net stop gsmini || set ERRORLEVEL=0</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;_DO_NOT_USE_NULLPTR_IN_ATL;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <Version>5.0.1</Version>
+    </Link>
+    <PostBuildEvent>
+      <Message>Install xml files for gsmini</Message>
+      <Command>mkdir "$(IntDir)..\xml"
+"..\..\xmlinstall.exe" -M ru -v "$(Version)" -m "gsmini" minixml teamfortress/teamfortress.xml minecraft/minecraft.xml cs16/cs16.xml gta/gta.xml csgo/csgo.xml left4dead2/left4dead2.xml "$(IntDir)..\xml\gsmini_msg_ru.xml"
+xcopy "$(IntDir)..\xml\gsmini_msg_ru.xml" ..\..\etc\xml\ /Y
+"..\..\xmlinstall.exe" -I -v "$(Version)" -m "gsmini" minixml teamfortress/teamfortress.xml minecraft/minecraft.xml cs16/cs16.xml gta/gta.xml csgo/csgo.xml left4dead2/left4dead2.xml "$(IntDir)..\xml\gsmini.xml"
+xcopy "$(IntDir)..\xml\gsmini.xml" ..\..\etc\xml\ /Y
+</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>net stop gsmini || set ERRORLEVEL=0</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<mgrdata>
+    <mainmenu level="super">
+		<node name="main">
+      <node name="adminpass"/>
+		</node>
+	</mainmenu>
+	<mainmenu level="user">
+		<node name="set">
+			<node name="file" noapi="yes"/>
+			<node name="ftpconf"/>
+		</node>
+	</mainmenu>
+</mgrdata>

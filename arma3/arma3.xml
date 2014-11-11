@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<mainmenu level="user">
+		<node name="srvset">
+			<node name="arma3.resume"/>
+			<node name="arma3.suspend"/>
+			<node name="arma3.reinstall"/>
+		</node>
+		<node name="set">
+			<node name="arma3"/>
+		</node>
+	</mainmenu>
+	<metadata name="arma3" type="form">
+		<form title="name">
+			<page name="network">
+				<field name="hostname">
+					<input type="text" name="hostname"/>
+				</field>
+				<field name="password">
+					<input type="text" name="password"/>
+				</field>
+				<field name="passwordAdmin">
+					<input type="text" name="passwordAdmin"/>
+				</field>
+				<field name="addparams">
+					<input type="text" name="addparams"/>
+				</field>
+			</page>
+			<page name="apply">
+				<field name="restart" fullwidth="yes">
+					<input name="restart" type="checkbox" required="yes"/>
+					<desc name="restartdesc"/>
+				</field>
+			</page>
+		</form>
+	</metadata>
+
+	<metadata name="arma3.state" type="list" key="name">
+		<toolbar>
+		</toolbar>
+		<coldata>
+			<col name="name" type="msg"/>
+			<col name="value" type="data">
+				<xprop name="status" img="p-on" value="on"/>
+				<xprop name="status" img="p-off" value="off"/>
+			</col>
+		</coldata>
+	</metadata>
+		
+	<metadata name="arma3.resume" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="arma3.suspend" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="arma3.reinstall" type="form">
+		<include name="game.reinstall"/>
+	</metadata>
+	
+	<metadata name="arma3.playerslist" type="list" key="name">
+		<coldata>
+			<col name="name" type="data"/>
+		</coldata>
+	</metadata>
+	
+	<lang name="ru">
+		<messages name="arma3.suspend">
+			<include name="stopserver_confirmform"/>
+		</messages>
+		<messages name="arma3.resume">
+			<include name="startserver_confirmform"/>
+		</messages>
+		<messages name="arma3.playerslist">
+			<msg name="title">Список игроков онлайн</msg>
+			<msg name="name">Ник</msg>
+		</messages>
+		<messages name="arma3">
+			<msg name="title">Настройка сервера ARMA 3</msg>
+			<msg name="title_new">Настройка сервера ARMA 3</msg>
+			<msg name="addparams">Дополнительные параметры</msg>
+			<msg name="hint_addparams">Дополнительные параметры кторые будут добавлены в конец строки запуска</msg>
+			<msg name="online-mode">Онлайн-режим</msg>
+			<msg name="hint_online-mode">Если установлен этот флаг, то сервер будет искать всех подключающихся пользователей в базе данных arma3.net</msg>
+			<msg name="allow-nether">Включить Нижний мир</msg>
+			<msg name="hint_allow-nether">Данный параметр определяет возможность перехода в Нижний мир. Если отключить, все игроки, находившиеся в Нижнем мире, будут перемещены в обычный. Не влияет на переход в Край.</msg>
+			<msg name="announce-player-achievements">Сообщать в чат о достижениях</msg>
+			<msg name="hint_announce-player-achievements">Данный параметр определяет, должен ли сервер отправлять в чат сообщения о получении достижений.</msg>
+			<msg name="enable-command-block">Включить "Командный блок"</msg>
+			<msg name="hint_enable-command-block">Позволяет использовать командный блок. Эта опция не генерируется при первой загрузке, а появляется при первой попытке использования командного блока.</msg>
+			<msg name="enable-query">Включает протокол GameSpy4</msg>
+			<msg name="hint_enable-query">Позволяет активировать протокол GameSpy4 для прослушки сервера (получении информации о сервере).</msg>
+			<msg name="force-gamemode">Принудительный режим игры</msg>
+			<msg name="hint_force-gamemode">Если включено, то при подключении к серверу режим игры игрока изменятся на стандартный, указанный в поле "Режим игры".</msg>
+			<msg name="generate-structures">Генерировать структуры</msg>
+			<msg name="hint_generate-structures">Генерировать ли структуры (сокровищницы, крепости, деревни...)</msg>
+			<msg name="hardcore">Хардкор</msg>
+			<msg name="hint_hardcore">Включает на сервере режим Хардкор. После смерти - бан, переподключиться нельзя.</msg>
+			<msg name="hostname">Имя сервера</msg>
+			<msg name="hint_hostname">Имя сервера которое будет отображаться в списке серверов</msg>
+			<msg name="password">Пароль</msg>
+			<msg name="hint_password">Пароль для входа на сервер</msg>
+			<msg name="passwordAdmin">Пароль администратора</msg>
+			<msg name="hint_passwordAdmin">Пароль для получения привилегий администратора</msg>
+
+			<msg name="level-seed">Зерно мира</msg>
+			<msg name="hint_level-seed">Входные данные (зерно) для генератора мира.</msg>
+			<msg name="level-type">Тип мира</msg>
+			<msg name="hint_level-type">Определяет тип мира.</msg>
+			<msg name="player-idle-timeout">Отключать бездействующих игроков через(мин)</msg>
+			<msg name="hint_player-idle-timeout">Если не поставлен ноль, то игроки будут автоматически отключаться от сервера, если они ничего не делали в течение указанного времени (в минутах).</msg>
+			<msg name="op-permission-level">Права операторов</msg>
+			<msg name="hint_op-permission-level">Позволяет изменять права операторов.</msg>
+			<msg name="resource-pack">Текстуры</msg>
+			<msg name="hint_resource-pack">Местоположение текстур, которые сервер предложит загрузить игроку при соединении. В данном поле нужно указать прямую ссылку на zip-архив.</msg>
+			<msg name="spawn-animals">Разрешить появление животных</msg>
+			<msg name="hint_spawn-animals">Разрешить появление животных на сервере.</msg>
+			<msg name="spawn-monsters">Разрешить появление монстров</msg>
+			<msg name="hint_spawn-monsters">Если включить, то в ночное время и в темных пещерах на карте будут появляться враждебные мобы и будут стараться нанести вред игрокам на сервере.</msg>
+			<msg name="spawn-npcs">Разрешить появление NPC</msg>
+			<msg name="hint_spawn-npcs">Разрешить появление NPC в деревнях.</msg>
+			<msg name="spawn-protection">Радиус защиты территории спауна</msg>
+			<msg name="hint_spawn-protection">Радиус защиты территории спауна в блоках (эту территорию смогут изменять только операторы). Радиус 0 дает защиту единственного блока, 1 - зоны 3x3 и так далее. Эта опция не генерируется при первой загрузке, а появляется, когда первый игрок заходит на сервер. После 1.4.2 защита спауна автоматически отключается, если у сервера нет ни одного оператора.</msg>
+			<msg name="white-list">Включить белый список(white-list)</msg>
+			<msg name="hint_white-list">Если включен администратору сервера необходимо будет вручную добавлять ники игроков в белый список и только эти игроки смогут играть на сервере. Если отключен, любой игрок сможет зайти на данный сервер, зная его IP-адрес и порт. Операторы сервера имеют возможность зайти на сервер вне зависимости от белого списка.</msg>
+			<msg name="motd">Описание сервера</msg>
+			<msg name="hint_motd">Описание сервера, отображаемое при подключении в списке серверов.</msg>
+			<msg name="max-build-height">Максимальная высота постройки</msg>
+			<msg name="hint_max-build-height">Пользователи не смогут построить ничего выше этого значения</msg>
+			<msg name="pvp">Режим PvP</msg>
+			<msg name="hint_pvp">Включает режим игрок против игрока</msg>
+			<msg name="difficulty">Сложность</msg>
+			<msg name="hint_difficulty">Выберите сложность игры</msg>
+			<msg name="gamemode">Режим игры</msg>
+			<msg name="hint_gamemode">Выберите режим игры</msg>
+			<msg name="view-distance">Радиус видимости</msg>
+			<msg name="hint_view-distance">Регулирует количество информации, которое будет передаваться клиенту. Следует уменьшить если наблюдаются задержки.</msg>
+			<msg name="network">Сеть</msg>
+			<msg name="world">Мир</msg>
+			<msg name="allow-flight">Разрешить полёты</msg>
+			<msg name="hint_allow-flight">Разрешает игроку совершать полёты по миру Minecraft. Эта опция действует только на полёты в режиме Выживание и оказывает эффект только при наличии соответствующего плагина (например, Flight). На полёты в режиме Творчество никак не влияет.</msg>
+			<msg name="enable-rcon">Включить удалённую консоль</msg>
+			<msg name="rcon.password">Пароль удалённой консоли</msg>
+			<msg name="rcon.port">Порт удалённой консоли</msg>
+			<msg name="operators">Операторы сервера</msg>
+			<msg name="DEFAULT">Обычный (DEFAULT)</msg>
+			<msg name="FLAT">Плоский (FLAT)</msg>
+			<msg name="LARGEBIOMES">Большие биомы (FLAT)</msg>
+			<msg name="oplevel_1">1 - Операторы могут ломать / ставить блоки внутри радиуса защиты территории спауна.</msg>
+			<msg name="oplevel_2">2 - Операторы могут использовать команды /clear, /difficulty, /effect, /gamemode, /gamerule, /give, /tp, и могут изменять командные блоки.</msg>
+			<msg name="oplevel_3">3 - Операторы могут использовать команды /ban, /deop, /kick, и /op.</msg>
+			<msg name="oplevel_4">4 - Операторы могут использовать команду /stop.</msg>
+			<msg name="hint_ops">Игроки, указанные в этом списке, получат права операторов на данном сервере. По одному игроку в строке.</msg>
+			<msg name="hint_enable-rcon">Позволяет управлять консолью сервера с помощью Minecraft RCON Tool</msg>
+			<msg name="apply">Применение настроек</msg>
+			<msg name="other">Другие настройки</msg>
+			<msg name="restartdesc">Применить параметры сервера сразу после нажатия кнопки OK. Запускает или перезапускает сервер.</msg>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_arma3.resume">Перезапустить</msg>
+			<msg name="menu_arma3.suspend">Остановить</msg>
+			<msg name="menu_arma3.reinstall">Переустановить</msg>
+			<msg name="menu_arma3opers">Операторы</msg>
+			<msg name="menu_arma3">Конфигурация</msg>
+			<msg name="menu_arma3whitelist">Белый список</msg>
+			<msg name="menu_arma3.plugin">Плагины</msg>
+		</messages>
+		<messages name="arma3.state">
+			<msg name="title">Состояние сервера</msg>
+			<msg name="name">Параметр</msg>
+			<msg name="value">Значение</msg>
+			<msg name="name_players_online">Игроков на сервере</msg>
+			<msg name="name_port">Порт сервера</msg>
+			<msg name="name_rconport">Порт удалённой консоли</msg>
+			<msg name="name_queryport">Порт GameSpy4(query-port)</msg>
+			<msg name="name_ip">IP-адрес сервера</msg>
+			<msg name="name_server_online">Сервер запущен</msg>
+			<msg name="name_version">Версия сервера</msg>
+			<msg name="name_server_offline">Сервер остановлен</msg>
+			<msg name="hint_p_status_on">Сервер запущен</msg>
+			<msg name="hint_p_status_off">Сервер остановлен</msg>
+			<msg name="name_max_players">Максимальное количество игроков</msg>
+		</messages>
+		<messages name="arma3opers">
+			<msg name="title">Операторы сервера</msg>
+			<msg name="name">Пользователь</msg>
+		</messages>
+		<messages name="arma3opers.edit">
+			<msg name="title">Редактирование оператора</msg>
+			<msg name="title_new">Создание оператора</msg>
+			<msg name="name">Имя</msg>
+		</messages>
+		<messages name="arma3whitelist">
+			<msg name="title">"Белый" список сервера</msg>
+			<msg name="name">Пользователь</msg>
+			<msg name="new">Добавить</msg>
+		</messages>
+		<messages name="arma3whitelist.edit">
+			<msg name="title">Редактирование пользователя</msg>
+			<msg name="title_new">Добавление пользователя</msg>
+			<msg name="name">Имя</msg>
+		</messages>
+		<messages name="arma3.reinstall">
+			<include name="game.reinstall"/>
+		</messages>
+		<messages name="arma3.plugin">
+			<msg name="title">Управление плагинами Minecraft</msg>
+			<msg name="name">Имя</msg>
+			<msg name="info">Описание</msg>
+			<msg name="status">Состояние</msg>
+			<msg name="hint_p_installed_on">Установлен</msg>
+			<msg name="hint_p_installed_off">Не установлен</msg>
+			<msg name="short_edit">Настроить</msg>
+			<msg name="short_install">Установить</msg>
+		</messages>
+		<messages name="arma3.plugin.mobhealth">
+			<msg name="title_new">Настройки MobHealth</msg>
+			<msg name="title">Настройки MobHealth</msg>
+			<msg name="config">Конфигурационный файл</msg>
+		</messages>
+		<messages name="dashboard">
+			<msg name="minecrattoolbar_configure">Изменить конфигурацию</msg>
+			<msg name="minecrattoolbar_resume">Запустить/Перезапустить</msg>
+			<msg name="minecrattoolbar_suspend">Остановить</msg>
+			<msg name="minecrattoolbar_reinstall">Переустановить</msg>
+			<msg name="title_minecrattoolbar">Управление сервером Minecraft</msg>
+			<msg name="playersdaystat">Статистика посещения сервера</msg>
+		</messages>
+	</lang>
+</mgrdata>

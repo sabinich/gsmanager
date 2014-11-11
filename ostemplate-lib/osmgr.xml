@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <!--Управление ОС-->
+  <metadata name="osmgr" type="list" key="id" keyname="name">
+    <toolbar>
+      <toolbtn func="osmgr.fetch" name="fetch" img="t-retry" type="new"/>
+      <toolsep/>
+      <toolbtn func="osmgr.install" name="install" img="t-install" type="group">
+        <hide name="repo" value="local_repository"/>
+        <hide name="installing" value="on"/>
+      </toolbtn>
+      <toolbtn func="osmgr.edit" name="setup" img="t-edit" type="edit" default="yes">
+        <show name="installed" value="ok"/>
+      </toolbtn>
+      <toolbtn func="osmgr.update" name="update" img="t-update" type="edit"/>
+      <toolsep/>
+      <toolbtn func="osmgr.delete" name="delete" img="t-delete" type="group">
+        <show name="installed" value="ok"/>
+      </toolbtn>
+      <toolsep/>
+      <toolbtn func="repo" name="repo" img="t-addon" type="list"/>
+      <!--      <toolbtn func="osmgr.autoupdate.on" name="autoupdateon" img="t-update" type="group">-->
+      <!--            <show name="autoupdate" value="off"/>-->
+      <!--      </toolbtn>-->
+      <!--      <toolbtn func="osmgr.autoupdate.off" name="autoupdateoff" img="t-no-update" type="group">-->
+      <!--      		<show name="autoupdate" value="on"/>      -->
+      <!--      </toolbtn>-->
+      <!--      <toolbtn func="osmgr.restrict.on" name="restricton" img="t-lock" type="group">-->
+      <!--       <show name="restrict" value="off"/>     -->
+      <!--      </toolbtn>-->
+      <!--      <toolbtn func="osmgr.restrict.off" name="restrictoff" img="t-unlock" type="group">-->
+      <!--       <show name="restrict" value="on"/>          -->
+      <!--      </toolbtn>-->
+    </toolbar>
+    <coldata>
+      <col name="name" type="data" sort="alpha" sorted="asc"/>
+      <col name="type" type="msg" sort="alpha">
+        <setcolor color="green" value="type_ostemplate"/>
+        <setcolor color="red" value="type_rescue"/>
+        <setcolor color="blue" value="type_diag"/>
+        <setcolor color="yellow" value="type_serversearch"/>
+      </col>
+      <col name="state" sort="prop">
+        <xprop name="installed" value="ok" img="p-lt3" stat="yes"/>
+        <xprop name="installed" value="failed" img="p-lt4" stat="yes"/>
+        <prop name="updateable" img="p-on" stat="yes"/>
+        <xprop name="autoupdate" value="on" img="p-update" stat="yes" func="osmgr.autoupdate.toggle" type="group"/>
+        <xprop name="restrict" value="on" img="p-lock" stat="yes" func="osmgr.restrict.toggle" type="group"/>
+        <prop name="install_error" img="p-error" stat="yes"/>
+        <xprop name="installing" value="on" img="p-install" animated="yes"/>
+        <prop name="need_version" img="p-admdown"/>
+      </col>
+      <col name="repo" type="msg" sort="alpha">
+        <setcolor color="blue" value="local_repository"/>
+      </col>
+      <!--			<col name="support" type="data" sort="alpha"/-->
+      <col name="date" type="data" sort="alpha"/>
+    </coldata>
+  </metadata>
+  <metadata name="osmgr.edit" type="form">
+    <form title="name">
+      <field name="autoupdate" fullwidth="yes">
+        <input type="checkbox" name="autoupdate"/>
+      </field>
+      <field name="restrict" fullwidth="yes">
+        <input type="checkbox" name="restrict"/>
+      </field>
+    </form>
+  </metadata>
+  <metadata name="repo" type="list" key="name">
+    <toolbar>
+      <toolbtn func="osmgr" name="back" type="back" img="t-back"/>
+      <toolsep/>
+      <toolbtn func="repo.edit" name="new" img="t-new" type="new"/>
+      <toolbtn func="repo.edit" name="edit" img="t-edit" type="edit" default="yes">
+        <show name="default" value="no"/>
+      </toolbtn>
+      <toolbtn func="repo.delete" name="delete" img="t-delete" type="group">
+        <show name="default" value="no"/>
+      </toolbtn>
+    </toolbar>
+    <coldata>
+      <col name="name" type="data" sort="alpha"/>
+      <col name="location" type="data" sort="alpha"/>
+    </coldata>
+  </metadata>
+  <metadata name="repo.edit" type="form">
+    <form title="title">
+      <field name="name" remove_if="edit">
+        <input type="text" name="name" check="reponame" required="yes"/>
+      </field>
+      <field name="location">
+        <input type="text" name="location" check="url" required="yes"/>
+      </field>
+    </form>
+  </metadata>
+  <metadata name="osmgr.createrepo" type="form">
+    <include name="repo.edit"/>
+  </metadata>
+  <metadata name="osmgr.installtemplate" type="form">
+    <form title="name">
+      <field name="longwarn" fullwidth="yes">
+        <textdata name="longwarnmsg" type="msg"/>
+      </field>
+      <field name="repo">
+        <select name="repo"/>
+      </field>
+      <field name="template">
+        <select name="template" depend="repo"/>
+      </field>
+    </form>
+  </metadata>
+  <metadata name="sshpubkey" type="list" key="id" keyname="name">
+    <toolbar>
+      <toolbtn func="sshpubkey.edit" name="new" img="t-new" type="new"/>
+      <toolbtn func="sshpubkey.edit" name="edit" img="t-edit" type="edit" default="yes"/>
+      <toolbtn func="sshpubkey.delete" name="delete" img="t-delete" type="group"/>
+    </toolbar>
+    <coldata>
+      <col name="name" type="data" sort="alpha"/>
+    </coldata>
+  </metadata>
+  <metadata name="sshpubkey.edit" type="form">
+    <form title="name">
+      <field name="info" fullwidth="yes">
+        <textdata name="infomsg" type="msg"/>
+      </field>
+      <field name="name">
+        <input type="text" name="name" required="yes"/>
+      </field>
+      <field name="pubkey" type="textarea" fullwidth="yes">
+        <textarea name="pubkey" rows="10" required="yes" check="sshpubkey"/>
+      </field>
+    </form>
+  </metadata>
+  <lang name="ru">
+    <!--ШАблоны ОС-->
+    <messages name="msgerror">
+      <msg name="desc_reponame">Значение может содержать только латиницу, цифры и символ '-'</msg>
+      <msg name="msg_error_osmgr_bad_location">Невозможно загрузить файл __location__.  Проверьте правильность указания ссылки и доступность сервера репозитория</msg>
+      <msg name="msg_error_osmgr_bad_repoinfo">В репозитории нет файла __filename__ или его содержимое отличается от '__content__'</msg>
+      <msg name="msg_error_osmgr_need_version">Чтобы установить или обновить шаблон, необходимо обновить панель управления до версии __value__ или выше</msg>
+      <msg name="msg_error_repo_locked">Репозиторий __repo__ заблокирован другим процессом</msg>
+    </messages>
+    <messages name="alert">
+      <msg name="groupfail_install">Не удалось установить __count__ шаблон(-а,-ов). Для получения подробностей наведите курсор на значок ошибки в строке таблицы.</msg>
+    </messages>
+    <messages name="desktop">
+      <msg name="menu_sshpubkey">SSH ключи</msg>
+    </messages>
+    <messages name="repo">
+      <msg name="title">Репозитории шаблонов ОС</msg>
+      <msg name="name">Репозиторий</msg>
+      <msg name="hint_new">Добавить новый репозиторий</msg>
+      <msg name="hint_edit">Редактировать репозиторий</msg>
+      <msg name="hint_delete">Удалить репозиторий</msg>
+      <msg name="location">Ссылка</msg>
+    </messages>
+    <messages name="repo.edit">
+      <msg name="title">Редактирование репозитория шаблонов ОС</msg>
+      <msg name="title_new">Новый репозиторий шаблонов ОС</msg>
+      <msg name="name">Репозиторий</msg>
+      <msg name="location">Ссылка</msg>
+      <msg name="hint_name">Наименование репозитория</msg>
+      <msg name="hint_location">Ссылка на репозиторий</msg>
+      <msg name="msg_error_no_template">По указанной ссылке нет ни одного шаблона операционной системы</msg>
+      <msg name="placeholder_name">ISPsystem</msg>
+      <msg name="placeholder_location">http://master.download.ispsystem.com/OSTemplate/</msg>
+    </messages>
+    <messages name="osmgr.createrepo">
+      <include name="repo.edit"/>
+    </messages>
+    <messages name="osmgr.installtemplate">
+      <msg name="longwarnmsg">После нажатия кнопки "Завершить" будет скачан и установлен выбранный шаблон. Это может занять длительное время.</msg>
+      <msg name="title">Установка шабона ОС</msg>
+      <msg name="repo">Репозиторий</msg>
+      <msg name="template">Шаблон ОС</msg>
+      <msg name="hint_template">Выберите Шаблон ОС, который необходимо установить</msg>
+      <msg name="hint_repo">Выберите репозиторий</msg>
+      <msg name="msg_error_install_failed">Во время установки шаблона произошла ошибка</msg>
+    </messages>
+    <messages name="osmgr">
+      <msg name="title">Управление шаблонами ОС</msg>
+      <msg name="repo_local_repository">Локальный шаблон</msg>
+      <msg name="short_install">Установить</msg>
+      <msg name="short_update">Обновить</msg>
+      <msg name="hint_update">Запустить процесс обновления списка шаблонов</msg>
+      <msg name="short_autoupdateon">Обновлять</msg>
+      <msg name="short_autoupdateoff">Не обновл</msg>
+      <msg name="hint_autoupdateon">Включить автообновление шаблона</msg>
+      <msg name="hint_autoupdateoff">Выключить автообновление шаблона</msg>
+      <msg name="short_restricton">Запретить</msg>
+      <msg name="short_restrictoff">Разрешить</msg>
+      <msg name="hint_restricton">Этот шаблон может использоваться только администратором</msg>
+      <msg name="hint_restrictoff">Этот шаблон может использоваться всеми пользователями</msg>
+      <msg name="short_fetch">Проверить</msg>
+      <msg name="hint_install">Установить/Обновить выбранные шаблоны</msg>
+      <msg name="hint_fetch">Обновить список шаблонов</msg>
+      <msg name="hint_delete">Удалить выбранные шаблоны</msg>
+      <msg name="name">Шаблон</msg>
+      <msg name="type">Тип</msg>
+      <msg name="type_ostemplate">Шаблон ОС</msg>
+      <msg name="type_rescue">Шаблон восстановления</msg>
+      <msg name="type_diag">Шаблон диагностики</msg>
+      <msg name="type_serversearch">Шаблон поиска</msg>
+      <msg name="date">Дата</msg>
+      <msg name="state">Состояние</msg>
+      <msg name="repo">Источник</msg>
+      <msg name="short_repo">Репозитории</msg>
+      <msg name="hint_repo">Настроить список репозиториев</msg>
+      <msg name="hint_p_install_error">Ошибка установки шаблона</msg>
+      <msg name="hint_p_installing_on">Производится установка шаблона</msg>
+      <msg name="hint_p_need_version">Чтобы установить или обновить шаблон, необходимо обновить панель управления до версии __value__ или выше</msg>
+      <msg name="hint_p_autoupdate_on">Автообновление для шаблона включено</msg>
+      <msg name="hint_p_restrict_on">Установка шаблона разрешена только администратору</msg>
+      <msg name="support">Совместимость</msg>
+      <msg name="hint_p_installed_on">Этот шаблон установлен</msg>
+      <msg name="msg_confirm_autoupdate">Переключить автообновление</msg>
+      <msg name="msg_confirm_autoupdateon">Включить автообновление</msg>
+      <msg name="msg_confirm_autoupdateoff">Выключить автообновление</msg>
+      <msg name="msg_confirm_restrict">Переключить ограничение доступа для</msg>
+      <msg name="msg_confirm_restricton">Включить ограничение доступа для шаблона</msg>
+      <msg name="msg_confirm_restrictoff">Отключить ограничение доступа для шаблона</msg>
+      <msg name="hint_p_updateable">Имеется более новая версия шаблона в репозитории</msg>
+      <msg name="msg_confirm_install">Вы действительно хотите установить (переустановить) шаблон ОС</msg>
+      <msg name="local_repo">Локальный шаблон</msg>
+      <msg name="type_rescure">Шаблон восстановления</msg>
+      <msg name="short_setup">Свойства</msg>
+      <msg name="hint_setup">Изменить свойства шаблона</msg>
+      <msg name="hint_p_autoupdate">Автообновление для шаблона включено</msg>
+      <msg name="hint_p_installed_ok">Этот шаблон установлен</msg>
+      <msg name="hint_p_installed_failed">При установке шаблона произошла ошибка</msg>
+      <msg name="hint_p_restrict">Установка шаблона разрешена только администратору</msg>
+      <msg name="hint_p_installing">Производится установка шаблона</msg>
+    </messages>
+    <messages name="osmgr.edit">
+      <msg name="title">Изменить параметры шаблона ОС</msg>
+      <msg name="autoupdate">Автообновление</msg>
+      <msg name="hint_autoupdate">Включить/выключить автообновление шаблона. Если обновление включено, система проверяет версию шаблона раз в сутки и обновляет в случае необходимости</msg>
+      <msg name="restrict">Только для администратора</msg>
+      <msg name="hint_restrict">Если ограничение включено, то установка шаблона возможна только под администраторским аккаунтом	&#13;
+		</msg>
+    </messages>
+    <messages name="sshpubkey">
+      <msg name="hint_default">В данном модуле вы можете указать публичные SSH ключи, которые будут скопированы при установке операционной системы. Данная функция поддерживается не всеми операционными системами.</msg>
+      <msg name="title">SSH ключи</msg>
+      <msg name="name">Наименование ключа</msg>
+    </messages>
+    <messages name="sshpubkey.edit">
+      <msg name="infomsg">Все добавленные публичные SSH ключи будут скопированы при установке операционной системы. Данная функция поддерживается не всеми операционными системами.</msg>
+      <msg name="title">SSH ключи</msg>
+      <msg name="name">Наименование ключа</msg>
+      <msg name="hint_name">Наименование ключа</msg>
+      <msg name="pubkey">Публичный SSH ключ</msg>
+      <msg name="hint_pubkey">Публичный SSH ключ</msg>
+    </messages>
+  </lang>
+</mgrdata>

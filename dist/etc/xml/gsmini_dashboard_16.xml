@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF8"?>
+<doc>
+	<block name="minecrattoolbar" position="top" type="toolbar">
+		<toolbtn form="minecraft.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="minecraft.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="minecraft.reinstall" img="mb-install" name="reinstall"/>
+		<toolbtn form="minecraft" img="mb-srvset" name="configure"/>
+	</block>	
+	<block name="minecraftstate" position="left" type="list" func="minecraft.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="arma3playerslist" position="left" type="list" func="arma3.playerslist" rows="10">
+		<col name="name"/>
+	</block>
+	<block name="minecrattoolbar" position="top" type="toolbar">
+		<toolbtn form="arma3.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="arma3.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="arma3.reinstall" img="mb-install" name="reinstall"/>
+		<toolbtn form="arma3" img="mb-srvset" name="configure"/>
+	</block>	
+	<block name="arma3state" position="left" type="list" func="arma3.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="arma3playerslist" position="left" type="list" func="arma3.playerslist" rows="10">
+		<col name="name"/>
+	</block>
+	<block name="gtatoolbar" position="top" type="toolbar">
+		<toolbtn form="gta.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="gta.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="gta" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="gtastate" position="left" type="list" func="gta.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="cs16toolbar" position="top" type="toolbar">
+		<toolbtn form="cs16.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="cs16.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="cs16" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="cs16state" position="left" type="list" func="cs16.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="rusttoolbar" position="top" type="toolbar">
+		<toolbtn form="rust.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="rust.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="rust" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="ruststate" position="left" type="list" func="rust.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="teamfortresstoolbar" position="top" type="toolbar">
+		<toolbtn form="teamfortress.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="teamfortress.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="teamfortress" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="teamfortressstate" position="left" type="list" func="teamfortress.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="csgotoolbar" position="top" type="toolbar">
+		<toolbtn form="csgo.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="csgo.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="csgo" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="csgo" position="left" type="list" func="csgo.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="left4dead2toolbar" position="top" type="toolbar">
+		<toolbtn form="left4dead2.resume" img="mb-srvstart" name="resume"/>
+		<toolbtn form="left4dead2.suspend" img="mb-srvstop" name="suspend"/>
+		<toolbtn form="left4dead2" img="mb-srvset" name="configure"/>
+	</block>
+	<block name="left4dead2state" position="left" type="list" func="left4dead2.state" rows="10">
+		<col name="name"/>
+		<col name="value"/>
+	</block>
+	<block name="playersdaystat" position="right" type="report" func="playersdaystat">
+	</block>
+	<block name="memdaystat" position="right" type="report" func="memdaystat">
+	</block>
+
+</doc>

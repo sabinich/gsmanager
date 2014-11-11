@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<mgrdata>
+<metadata name="user" type="list" key="id" keyname="name">
+	<toolbar>
+		<toolbtn func="user.edit" name="new" img="t-new" type="new"/>
+		<toolbtn func="user.edit" name="edit" img="t-edit" type="edit" default="yes"/>
+		<toolbtn func="user.delete" name="delete" img="t-delete" type="group"/>
+		<toolsep/>
+		<toolbtn func="user.enable" name="enable" img="t-on" type="group"/>
+		<toolbtn func="user.disable" name="disable" img="t-off" type="group"/>
+		<toolsep/>
+		<toolbtn func="user.filter" name="filter" img="t-filter" type="new"/>
+		<toolsep/>
+		<toolbtn func="user.su" name="su" img="t-go" type="edit"/>
+	</toolbar>
+	<coldata>
+		<col name="id" type="data" sort="digit" sorted="asc"/>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="level" type="msg" sort="alpha"/>
+		<col name="status" sort="prop">
+			<xprop name="enabled" value="on" img="p-on" stat="yes"/>
+			<xprop name="enabled" value="off" img="p-off" stat="yes"/>
+			<xprop name="level" value="29" img="p-root" stat="yes"/>
+		</col>
+	</coldata>
+</metadata>
+<metadata name="user.edit" type="form">
+	<form title="name">
+		<field name="level">
+			<select name="level"/>
+		</field>
+		<field name="name">
+			<input type="text" name="name" check="username" required="yes"/>
+		</field>
+		<field name="passwd">
+			<input type="password" name="passwd" checkpasswd="confirm"/>
+		</field>
+		<field name="confirm">
+			<input type="password" name="confirm" notprop="yes"/>
+		</field>
+	</form>
+</metadata>
+<metadata name="node" type="list" key="id" keyname="name">
+	<toolbar>
+		<toolbtn func="node.edit" name="new" img="t-new" type="new"/>
+		<toolbtn func="node.winnode" name="newwin" img="t-new" type="new"/>
+		<toolbtn func="node.edit" name="edit" img="t-edit" type="edit" default="yes"/>
+		<toolbtn func="node.delete" name="delete" img="t-delete" type="group"/>
+		<toolsep/>
+		<toolbtn func="node.refill" name="refill" img="t-download" type="group"/>
+		<toolbtn func="node.updatedist" name="updatedist" img="t-download" type="group"/>
+		<toolbtn func="node.gamelist" name="gamelist" img="t-addon" type="editlist"/>
+	</toolbar>
+	<coldata>
+		<col name="id" type="data" sort="digit" sorted="asc"/>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="ip" type="data" sort="alpha"/>
+		<col name="minimgrport" type="data" sort="digit"/>
+		<col name="mem" type="indicator" sort="indicator"/>
+		<col name="hdd" type="data" sort="digit"/>
+		<col name="cpu" type="data" sort="digit"/>
+		<col name="stat" sort="prop">
+			<prop name="disabled" img="p-file-300" stat="yes"/>
+		</col>
+	</coldata>
+</metadata>
+<metadata name="node.edit" type="form">
+	<form progress="notime" title="name">
+		<field name="sshinfo" fullwidth="yes" remove_if="edit">
+			<textdata name="tasshinfo" type="msg"/>
+		</field>
+		<field name="sshkey" fullwidth="yes" remove_if="edit">
+			<textarea name="sshkey" readonly="yes" rows="6"/>
+		</field>
+		<field name="has_pwd" remove_if="edit">
+			<input type="checkbox" name="has_pwd">
+				<if value="off" hide="passwd"/>
+				<if value="on" hide="sshinfo"/>
+				<if value="on" hide="sshkey"/>
+			</input>
+			<desc name="has_pwd_desc"/>
+		</field>
+		<field name="passwd" remove_if="edit">
+			<input name="passwd" type="password"/>
+		</field>
+		<field name="ip">
+			<input name="ip" type="text" check="ip" required="yes"/>
+		</field>
+		<field name="minimgrport">
+			<input name="minimgrport" type="text" check="int" checkargs="1,32999" remove_if="new"/>
+		</field>
+
+		<field name="name">
+			<input name="name" type="text" required="yes"/>
+		</field>
+	</form>
+</metadata>
+<metadata name="node.winnode" type="form">
+	<form title="name">
+		<field name="name">
+			<input name="name" type="text" required="yes"/>
+		</field>
+		<field name="ip">
+			<input name="ip" type="text" check="ip" required="yes"/>
+		</field>
+		<field name="minimgrport">
+			<input name="minimgrport" type="text" check="int" checkargs="1,32999"/>
+		</field>
+		<field name="passwd" remove_if="edit">
+			<input name="passwd" type="password"/>
+		</field>
+	</form>
+</metadata>
+<metadata name="node.gamelist" type="list" key="name">
+	<toolbar>
+		<toolbtn func="node.gamelist.allow" name="gameallow" img="t-on" type="group"/>
+		<toolbtn func="node.gamelist.deny" name="gamedeny" img="t-off" type="group"/>
+	</toolbar>
+	<coldata>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="icount" type="data" sort="digit"/>
+		<col name="stat" sort="prop">
+			<xprop name="allowed" value="on" img="p-on" stat="yes"/>
+			<xprop name="allowed" value="off" img="p-off" stat="yes"/>
+			<prop name="installing" img="p-install" animated="yes"/>
+			<prop name="error" img="p-error"/>
+		</col>
+	</coldata>
+</metadata>
+
+<metadata name="game.edit" type="form">
+	<form title="name">
+		<page name="main">
+			<field name="name">
+				<input type="text" name="name" required="yes"/>
+			</field>
+			<field name="user" level="admin">
+				<select name="user"/>
+			</field>
+			<field name="node" level="admin">
+				<select name="node"/>
+			</field>
+			<field name="ip" level="admin">
+				<input type="text" name="ip" check="ip"/>
+			</field>
+			<field name="port" level="admin">
+				<input type="text" name="port" check="int" checkargs="10000,65535"/>
+			</field>
+			<field name="maxplayers" level="admin">
+				<input type="text" name="maxplayers" check="int" checkargs="1,500" required="yes"/>
+			</field>
+		</page>
+	</form>
+</metadata>
+
+<metadata name="server" type="list" key="id" keyname="name">
+	<toolbar>
+		<toolbtn func="server.edit" name="new" img="t-new" type="new" level="admin"/>
+		<toolbtn func="server.edit" name="edit" img="t-edit" type="edit" level="admin"/>
+		<toolbtn func="server.delete" name="delete" img="t-delete" type="group" level="admin"/>
+		<toolsep/>
+		<toolbtn func="server.resume" name="start" img="t-restart" type="group" level="admin user"/>
+		<toolbtn func="server.suspend" name="stop" img="t-stop" type="group" level="admin user"/>
+		<toolsep/>
+		<toolbtn func="server.enable" name="enable" img="t-unlock" type="group" level="admin"/>
+		<toolbtn func="server.disable" name="disable" img="t-lock" type="group" level="admin"/>
+		<toolsep/>
+		<toolbtn func="server.configure" name="configure" img="t-set" type="window" default="yes" level="admin user"/>
+		<toolsep/>
+		<toolbtn func="server.migrate" name="migrate" img="t-redo" type="edit" level="admin"/>
+	</toolbar>
+	<coldata>
+		<col name="id" type="data" sort="digit" sorted="asc"/>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="type" type="data" sort="alpha"/>
+		<col name="version" type="data" sort="alpha"/>
+		<col name="ip" type="data" sort="alpha"/>
+		<col name="port" type="data" sort="digit"/>
+		<col name="owner" type="data" sort="alpha" level="admin"/>
+		<col name="nodename" type="data" sort="alpha" level="admin"/>
+		<col name="status" sort="prop">
+			<xprop name="broken" img="p-error" value="on" stat="yes"/>
+			<xprop name="connection_lost" img="p-ineterror" stat="yes"/>
+			<xprop name="active" img="p-on" value="on" stat="yes"/>
+			<xprop name="active" img="p-off" value="off" stat="yes"/>
+			<xprop name="disabled" img="p-lock" value="on" stat="yes"/>
+			<xprop name="moving" img="p-install" value="on" stat="yes" animated="yes"/>
+		</col>
+		<col name="players" type="indicator" sort="indicator" stat="yes"/>
+		<col name="diskused" type="data" sort="digit" stat="yes"/>
+		<col name="ramused" type="data" sort="digit" stat="yes"/>
+	</coldata>
+</metadata>
+
+<metadata name="server.edit" type="form">
+	<form title="name">
+		<field name="name">
+			<input type="text" name="name" required="yes"/>
+		</field>
+		<field name="user" level="admin">
+			<select name="user"/>
+		</field>
+		<field name="game" level="admin" remove_if="edit">
+			<select name="game"/>
+		</field>
+		<field name="node" level="admin" remove_if="edit">
+			<select name="node" depend="game"/>
+		</field>
+		<field name="ip" level="admin">
+			<input type="text" name="ip" check="ip"/>
+		</field>
+		<field name="port" level="admin" remove_if="edit">
+			<input type="text" name="port" check="int" checkargs="10000,65535"/>
+		</field>
+		<field name="maxplayers" level="admin">
+			<input type="text" name="maxplayers" check="int" checkargs="1,500" required="yes"/>
+		</field>
+	</form>
+</metadata>
+
+<metadata name="server.migrate" type="form">
+	<form title="name">
+		<field name="node" level="admin">
+			<select name="node"/>
+		</field>
+	</form>
+</metadata>
+
+<metadata name="tsserver" type="list" key="id" keyname="name">
+	<toolbar>
+		<toolbtn func="tsserver.edit" name="new" img="t-new" type="new" level="admin"/>
+		<toolbtn func="tsserver.edit" name="edit" img="t-edit" type="edit" level="admin"/>
+		<toolbtn func="tsserver.delete" name="delete" img="t-delete" type="group" level="admin"/>
+		<toolsep/>
+		<toolbtn func="tsserver.resume" name="start" img="t-restart" type="group" level="admin user"/>
+		<toolbtn func="tsserver.suspend" name="stop" img="t-stop" type="group" level="admin user"/>
+		<toolsep/>
+		<toolbtn func="tsserver.enable" name="enable" img="t-unlock" type="group" level="admin"/>
+		<toolbtn func="tsserver.disable" name="disable" img="t-lock" type="group" level="admin"/>
+		<toolsep/>
+		<toolbtn func="tsserver.edit" name="configure" img="t-set" type="edit" default="yes" level="user"/>
+	</toolbar>
+	<coldata>
+		<col name="id" type="data" sort="digit" sorted="asc"/>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="ip" type="data" sort="alpha"/>
+		<col name="port" type="data" sort="digit"/>
+		<col name="user" type="data" sort="alpha" level="admin"/>
+		<col name="status" sort="prop">
+			<xprop name="active" img="p-on" value="on" stat="yes"/>
+			<xprop name="active" img="p-off" value="off" stat="yes"/>
+			<xprop name="disabled" img="p-lock" value="on" stat="yes"/>
+		</col>
+		<col name="players" type="indicator" sort="indicator" stat="yes"/>
+	</coldata>
+</metadata>
+
+<metadata name="tsserver.edit" type="form">
+	<form title="name">
+		<field name="name">
+			<input type="text" name="name" required="yes"/>
+		</field>
+		<field name="user" level="admin">
+			<select name="user"/>
+		</field>
+		<field name="maxplayers" level="admin">
+			<input type="text" name="maxplayers" check="int" checkargs="1,500" required="yes"/>
+		</field>
+		<field name="admintoken" level="user+" remove_if="new">
+			<input type="text" name="admintoken" readonly="yes"/>
+		</field>
+		<field name="sid" level="admin"  remove_if="new">
+			<input type="text" name="sid" readonly="yes"/>
+		</field>
+	</form>
+</metadata>
+
+<metadata name="gamedistr" type="list" key="distrxml" level="admin">
+	<toolbar>
+		<toolbtn func="gamedistr.install" name="install" img="t-install" type="group"/>
+	</toolbar>
+	<coldata>
+		<col name="name" type="data" sort="alpha"/>
+		<col name="distrxml" type="data" sort="alpha"/>
+		<col name="state" sort="prop">
+			<prop name="installed" img="p-lt3"/>
+			<prop name="installing" img="p-install" animated="yes"/>
+		</col>
+	</coldata>
+</metadata>
+
+<metadata name="overallplayers" type="report">
+<band name="players">
+	<col name="info" type="msg"/>
+	<band name="data" psort="date" fullwidth="yes" hidden="yes">
+		<diagram type="line" label="date" name="diagram_players">
+		</diagram>
+		<col name="date" type="data" sort="alpha"/>
+	</band>
+</band>
+</metadata>
+
+</mgrdata>

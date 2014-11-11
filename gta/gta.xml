@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<mgrdata>
+	<mainmenu level="user">
+		<node name="srvset">
+			<node name="gta.resume"/>
+			<node name="gta.suspend"/>
+			<node name="gta.reinstall"/>
+		</node>
+		<node name="set">
+			<node name="gta"/>
+			<node name="gta.gamemode"/>
+		</node>
+	</mainmenu>
+	<metadata name="gta" type="form">
+		<form>
+			<page name="server">
+				<field name="hostname">
+					<input type="text" name="hostname"/>
+				</field>
+				<field name="weburl">
+					<input type="text" name="weburl"/>
+				</field>
+				<field name="rcon_password">
+					<input type="text" name="rcon_password"/>
+				</field>
+				<field name="password">
+					<input type="text" name="password"/>
+				</field>
+			</page>
+			<page name="world">
+				<field name="mapname">
+					<input type="text" name="mapname"/>
+				</field>
+				<field name="maxnpc">
+					<input type="text" name="maxnpc"/>
+				</field>
+				<field name="onfoot_rate">
+					<input type="text" name="onfoot_rate"/>
+				</field>
+				<field name="incar_rate">
+					<input type="text" name="incar_rate"/>
+				</field>
+				<field name="weapon_rate">
+					<input type="text" name="weapon_rate"/>
+				</field>
+				<field name="stream_distance">
+					<input type="text" name="stream_distance"/>
+				</field>
+				<field name="stream_rate">
+					<input type="text" name="stream_rate"/>
+				</field>
+			</page>
+			<page name="apply">
+				<field name="restart" fullwidth="yes">
+					<input name="restart" type="checkbox" required="yes"/>
+					<desc name="restartdesc"/>
+				</field>
+			</page>
+		</form>
+	</metadata>
+	<metadata name="gta.state" type="list" key="name">
+		<toolbar>
+		</toolbar>
+		<coldata>
+			<col name="name" type="msg"/>
+			<col name="value" type="data">
+				<xprop name="status" img="p-on" value="on"/>
+				<xprop name="status" img="p-off" value="off"/>
+			</col>
+		</coldata>
+	</metadata>
+	<metadata name="gta.gamemode" type="list" key="order">
+		<toolbar>
+			<toolbtn func="gta.gamemode.edit" name="new" img="t-new" type="new"/>
+			<toolbtn func="gta.gamemode.edit" name="edit" img="t-edit" type="edit"/>
+			<toolbtn func="gta.gamemode.delete" name="delete" img="t-delete" type="group"/>
+		</toolbar>
+		<coldata>
+			<col name="order" type="data"/>
+			<col name="name" type="data"/>
+			<col name="repeat" type="data"/>
+		</coldata>
+	</metadata>
+	<metadata name="gta.gamemode.edit" type="form">
+		<form>
+			<field name="order">
+				<input type="text" name="order"/>
+			</field>
+			<field name="name">
+				<input type="text" name="name"/>
+			</field>
+			<field name="repeat">
+				<input type="text" name="repeat"/>
+			</field>
+		</form>
+	</metadata>
+	
+	<metadata name="gta.resume" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="gta.suspend" type="form">
+		<include name="confirmform"/>
+	</metadata>
+	
+	<metadata name="gta.reinstall" type="form">
+		<include name="game.reinstall"/>
+	</metadata>
+	
+	<lang name="ru">
+		<messages name="gta.suspend">
+			<include name="stopserver_confirmform"/>
+		</messages>
+		<messages name="gta.resume">
+			<include name="startserver_confirmform"/>
+		</messages>
+		<messages name="gta">
+			<msg name="title">Редактирование параметров сервера GTA</msg>
+			<msg name="server">Основный настройки сервера.</msg>
+			<msg name="hostname">Название хоста</msg>
+			<msg name="weburl">Ссылка на информацию</msg>
+			<msg name="hint_weburl">Ссылка на информацию об сервере</msg>
+			<msg name="rcon_password">Пароль администратора</msg>
+			<msg name="hint_rcon_password">Пароль администратора игрового сервера</msg>
+			<msg name="password">Пароль</msg>
+			<msg name="hint_password">Установка пароля на подключение. Создание приватного игрового сервера.</msg>
+			<msg name="hint_hostname">Название игрового сервера</msg>
+
+			<msg name="world">Мир</msg>
+			<msg name="mapname">Карта</msg>
+			<msg name="hint_mapname">Название карты. По умолчанию San Andreas</msg>
+			<msg name="maxnpc">Количество NPC</msg>
+			<msg name="hint_maxnpc">Максимальное количество NPC на сервере.</msg>
+			<msg name="onfoot_rate">Частота обновления во время бега/ходьбы (мс).</msg>
+			<msg name="hint_onfoot_rate">Минимальное время, за которое клиент должен сообщать новую информацию об игроке во время пешего перемещения.</msg>
+			<msg name="incar_rate">Частота обновления в транспорте (мс).</msg>
+			<msg name="hint_incar_rate">Минимальное время, за которое клиент должен сообщать новую информацию об игроке, перемещающемся на транспорте.</msg>
+			<msg name="weapon_rate">Частота обновления при атаке (мс).</msg>
+			<msg name="hint_weapon_rate">Минимальное время, за которое клиент должен сообщать новую информацию об атакующем игроке.</msg>
+			<msg name="stream_distance">Дальность видимости.</msg>
+			<msg name="hint_stream_distance">Расстояние, на котором игроку будут отображаться объекты.</msg>
+			<msg name="stream_rate">Частота обновления видимых объектов (мс)</msg>
+			<msg name="hint_stream_rate">Время между перерасчётами видимых игроку объектов.</msg>
+
+			<msg name="apply">Применение настроек</msg>
+			<msg name="restartdesc">Применить параметры сервера сразу после нажатия кнопки OK. Запускает или перезапускает сервер.</msg>
+		</messages>
+		<messages name="dashboard">
+			<msg name="gtatoolbar_configure">Изменить конфигурацию</msg>
+			<msg name="gtatoolbar_resume">Запустить/ Перезапустить</msg>
+			<msg name="gtatoolbar_suspend">Остановить</msg>
+			<msg name="gtatoolbar_reinstall">Переустановить</msg>
+			<msg name="title_gtatoolbar">Управление сервером GTA</msg>
+		</messages>
+		<messages name="gta.state">
+			<msg name="title">Состояние сервера</msg>
+			<msg name="name">Параметр</msg>
+			<msg name="value">Значение</msg>
+			<msg name="name_players_online">Игроков на сервере</msg>
+			<msg name="name_port">Порт сервера</msg>
+			<msg name="name_ip">IP-адрес сервера</msg>
+			<msg name="name_server_online">Сервер запущен</msg>
+			<msg name="name_server_offline">Сервер остановлен</msg>
+			<msg name="hint_p_status_on">Сервер запущен</msg>
+			<msg name="hint_p_status_off">Сервер остановлен</msg>
+		</messages>
+		<messages name="gta.gamemode">
+			<msg name="title">Список включённых модификаций игры</msg>
+			<msg name="order">Номер в очереди</msg>
+			<msg name="name">Имя модификации игры</msg>
+			<msg name="repeat">Количество повторов</msg>
+			<msg name="short_new">Добавить</msg>
+			<msg name="short_edit">Изменить</msg>
+		</messages>
+		<messages name="gta.gamemode.edit">
+			<msg name="title">Редактирование включенной модификации</msg>
+			<msg name="title_new">Включенние модификации</msg>
+			<msg name="order">Номер в очереди</msg>
+			<msg name="name">Имя модификации</msg>
+			<msg name="repeat">Количество повторов</msg>
+		</messages>
+		<messages name="desktop">
+			<msg name="menu_gta.gamemode">Модификации игры</msg>
+			<msg name="menu_gta">Конфигурация</msg>
+			<msg name="menu_gta.resume">Перезапустить</msg>
+			<msg name="menu_gta.suspend">Остановить</msg>
+			<msg name="menu_gta.plugin">Плагины</msg>
+			<msg name="menu_gta.reinstall">Переустановить</msg>
+		</messages>
+		<messages name="gta.reinstall">
+			<include name="game.reinstall"/>
+		</messages>
+	</lang>
+</mgrdata>

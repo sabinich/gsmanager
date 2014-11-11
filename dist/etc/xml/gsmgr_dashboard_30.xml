@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF8"?>
+<doc>
+	<block name="cs16" position="left" type="list" func="cs16" rows="10">
+		<col name="name"/>
+		<col name="ip"/>
+		<col name="port"/>
+		<col name="status"/>
+	</block>
+	<block name="gta" position="right" type="list" func="gta" rows="10">
+		<col name="name"/>
+		<col name="ip"/>
+		<col name="port"/>
+		<col name="status"/>
+	</block>
+	<block name="minecraft" position="left" type="list" func="minecraft" rows="10">
+		<col name="name"/>
+		<col name="ip"/>
+		<col name="port"/>
+		<col name="status"/>
+	</block>
+	<block name="teamfortress" position="right" type="list" func="teamfortress" rows="10">
+		<col name="name"/>
+		<col name="ip"/>
+		<col name="port"/>
+		<col name="status"/>
+	</block>
+</doc>
+

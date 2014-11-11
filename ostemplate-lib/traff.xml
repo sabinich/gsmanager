@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mgrdata>
+  <metadata name="traffilter" type="list" key="id" keyname="object">
+    <toolbar>
+      <toolbtn func="traffilter.edit" name="new" img="t-new" type="new"/>
+      <toolbtn func="traffilter.edit" name="edit" img="t-edit" type="edit" default="yes"/>
+      <toolbtn func="traffilter.delete" name="delete" img="t-delete" type="group"/>
+    </toolbar>
+    <coldata>
+      <col name="id" sort="digit" type="data"/>
+      <col name="object" sort="alpha" type="data" convert="punycode"/>
+      <col name="direction" sort="alpha" type="msg" convert="punycode">
+        <setcolor color="blue" value="1"/>
+        <setcolor color="green" value="2"/>
+        <setcolor color="red" value="3"/>
+      </col>
+      <col name="ip" sort="alpha" type="data" level="admin"/>
+    </coldata>
+  </metadata>
+  <metadata name="traffilter.edit" type="form">
+    <form title="object">
+      <field name="object">
+        <select name="object"/>
+      </field>
+      <field name="direction">
+        <select name="direction"/>
+      </field>
+      <field name="ip">
+        <input type="text" check="iprange" name="ip"/>
+      </field>
+    </form>
+  </metadata>
+  <lang name="ru">
+    <messages name="traffilter">
+      <msg name="id">Id</msg>
+      <msg name="object"> Наименование объекта</msg>
+      <msg name="ip">IP-адрес</msg>
+      <msg name="direction_1">Входящий</msg>
+      <msg name="direction_2">Исходящий</msg>
+      <msg name="direction_3">Весь</msg>
+      <msg name="direction_0">Неизвестно</msg>
+      <msg name="direction">Направление трафика</msg>
+      <msg name="title">Фильтр для трафика</msg>
+    </messages>
+    <messages name="traffilter.edit">
+      <msg name="direction"> Направление</msg>
+      <msg name="hint_direction">Направление игнорируемого трафика</msg>
+      <msg name="title">Редактировать элемент фильтра</msg>
+      <msg name="title_new">Добавить элемент фильтра</msg>
+      <msg name="object">Объект</msg>
+      <msg name="hint_object">Объект, трафик которого будет игнорироваться</msg>
+      <msg name="direction_incoming">Входящий</msg>
+      <msg name="direction_outgowing">Исходящий</msg>
+      <msg name="direction_both">Весь</msg>
+      <msg name="direction_unknown">Неизвестно</msg>
+      <msg name="ip">IP-адрес</msg>
+    </messages>
+  </lang>
+</mgrdata>
